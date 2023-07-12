@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/views/shop/commonCartEffect.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1686143559668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686143620129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n // 购物车相关逻辑\r\n export const useCartEffect = () => {\r\n-    const store = useStore()\r\n+  const store = useStore()\r\n     const { cartList } = toRefs(store.state)\r\n     const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n       store.commit('changeCartItemInfo', { shopId, productId, productInfo, num })\r\n     }\r\n     return { cartList, changeCartItemInfo }\r\n\\ No newline at end of file\n-  }\n+}\r\n"
+                },
+                {
+                    "date": 1686143634776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,14 @@\n // 购物车相关逻辑\r\n export const useCartEffect = () => {\r\n-  const store = useStore()\r\n-    const { cartList } = toRefs(store.state)\r\n+    const store = useStore();\r\n+    const { cartList } = toRefs(store.state);\r\n     const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n-      store.commit('changeCartItemInfo', { shopId, productId, productInfo, num })\r\n-    }\r\n\\ No newline at end of file\n-    return { cartList, changeCartItemInfo }\r\n-}\n+        store.commit(\"changeCartItemInfo\", {\r\n+            shopId,\r\n+            productId,\r\n+            productInfo,\r\n+            num,\r\n+        });\r\n+    };\r\n+    return { cartList, changeCartItemInfo };\r\n+};\r\n"
+                },
+                {
+                    "date": 1686145056103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,17 @@\n+\r\n+import { useStore } from 'vuex'\r\n+import { toRefs } from 'vue'\r\n // 购物车相关逻辑\r\n export const useCartEffect = () => {\r\n-    const store = useStore();\r\n-    const { cartList } = toRefs(store.state);\r\n-    const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n-        store.commit(\"changeCartItemInfo\", {\r\n-            shopId,\r\n-            productId,\r\n-            productInfo,\r\n-            num,\r\n-        });\r\n-    };\r\n-    return { cartList, changeCartItemInfo };\r\n-};\r\n+  const store = useStore()\r\n+  const { cartList } = toRefs(store.state)\r\n+  const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n+    store.commit('changeCartItemInfo', {\r\n+      shopId,\r\n+      productId,\r\n+      productInfo,\r\n+      num\r\n+    })\r\n+  }\r\n+  return { cartList, changeCartItemInfo }\r\n+}\r\n"
+                },
+                {
+                    "date": 1686145085017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n \r\n import { useStore } from 'vuex'\r\n import { toRefs } from 'vue'\r\n // 购物车相关逻辑\r\n-export const useCartEffect = () => {\r\n+export const useCommonCartEffect = () => {\r\n   const store = useStore()\r\n   const { cartList } = toRefs(store.state)\r\n   const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n     store.commit('changeCartItemInfo', {\r\n"
+                },
+                {
+                    "date": 1686145603617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,15 @@\n \r\n import { useStore } from 'vuex'\r\n-import { toRefs } from 'vue'\r\n // 购物车相关逻辑\r\n export const useCommonCartEffect = () => {\r\n   const store = useStore()\r\n-  const { cartList } = toRefs(store.state)\r\n   const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n     store.commit('changeCartItemInfo', {\r\n       shopId,\r\n       productId,\r\n       productInfo,\r\n       num\r\n     })\r\n   }\r\n-  return { cartList, changeCartItemInfo }\r\n+  return {  changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1686145739393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,6 @@\n       productInfo,\r\n       num\r\n     })\r\n   }\r\n-  return {  changeCartItemInfo }\r\n+  return { changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1686210200636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { useStore } from 'vuex'\r\n // 购物车相关逻辑\r\n export const useCommonCartEffect = () => {\r\n   const store = useStore()\r\n+  const cartList = store.\r\n   const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n     store.commit('changeCartItemInfo', {\r\n       shopId,\r\n       productId,\r\n"
+                },
+                {
+                    "date": 1686210272337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,15 @@\n import { useStore } from 'vuex'\r\n // 购物车相关逻辑\r\n export const useCommonCartEffect = () => {\r\n   const store = useStore()\r\n-  const cartList = store.\r\n+  const cartList = store.cartList\r\n   const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n     store.commit('changeCartItemInfo', {\r\n       shopId,\r\n       productId,\r\n       productInfo,\r\n       num\r\n     })\r\n   }\r\n-  return { changeCartItemInfo }\r\n+  return { cartList, changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1686210470659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { useStore } from 'vuex'\r\n // 购物车相关逻辑\r\n export const useCommonCartEffect = () => {\r\n   const store = useStore()\r\n-  const cartList = store.cartList\r\n+  const cartList = store.state.cartList\r\n   const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n     store.commit('changeCartItemInfo', {\r\n       shopId,\r\n       productId,\r\n"
+                }
+            ],
+            "date": 1686143559668,
+            "name": "Commit-0",
+            "content": "// 购物车相关逻辑\r\nexport const useCartEffect = () => {\r\n    const store = useStore()\r\n    const { cartList } = toRefs(store.state)\r\n    const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n      store.commit('changeCartItemInfo', { shopId, productId, productInfo, num })\r\n    }\r\n    return { cartList, changeCartItemInfo }\r\n  }"
+        }
+    ]
+}

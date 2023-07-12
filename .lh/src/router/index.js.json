@@ -1,0 +1,150 @@
+{
+    "sourceFile": "src/router/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 33,
+            "patches": [
+                {
+                    "date": 1685073994155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685519167904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,21 @@\n import { createRouter, createWebHashHistory } from 'vue-router'\n // import HomeView from '../views/HomeView.vue'\n+import Home from '../views/home/Home'\n+import Login from '../views/login/Login'\n \n const routes = [\n+  {\n+    path: '/',\n+    name: 'home',\n+    component: Home\n+  },\n+  {\n+    path: '/login',\n+    name: 'Login',\n+    component: Login\n+  }\n   // {\n-  //   path: '/',\n-  //   name: 'home',\n-  //   component: HomeView\n-  // },\n-  // {\n   //   path: '/about',\n   //   name: 'about',\n   //   // route level code-splitting\n   //   // this generates a separate chunk (about.[hash].js) for this route\n"
+                },
+                {
+                    "date": 1685520252898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,9 @@\n const router = createRouter({\n   history: createWebHashHistory(),\n   routes\n })\n+router.beforeEach((to, from, next) => {\n+  \n+})\n \n export default router\n"
+                },
+                {
+                    "date": 1685520528962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,13 @@\n   history: createWebHashHistory(),\n   routes\n })\n router.beforeEach((to, from, next) => {\n-  \n+  const {isLogin} = localStorage;\n+  if(isLogin || to.name === 'Login'){\n+    next();\n+  }else {\n+    next({name: 'Login'})\n+  }\n })\n \n export default router\n"
+                },
+                {
+                    "date": 1685520542921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   history: createWebHashHistory(),\n   routes\n })\n router.beforeEach((to, from, next) => {\n-  const {isLogin} = localStorage;\n+  const { isLogin } = localStorage;\n   if(isLogin || to.name === 'Login'){\n     next();\n   }else {\n     next({name: 'Login'})\n"
+                },
+                {
+                    "date": 1685520606508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,13 +28,13 @@\n   history: createWebHashHistory(),\n   routes\n })\n router.beforeEach((to, from, next) => {\n-  const { isLogin } = localStorage;\n-  if(isLogin || to.name === 'Login'){\n-    next();\n-  }else {\n-    next({name: 'Login'})\n+  const { isLogin } = localStorage\n+  if (isLogin || to.name === 'Login') {\n+    next()\n+  } else {\n+    next({ name: 'Login' })\n   }\n })\n \n export default router\n"
+                },
+                {
+                    "date": 1685520789901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,19 @@\n   },\n   {\n     path: '/login',\n     name: 'Login',\n-    component: Login\n+    component: Login,\n+    beforeEnter(to, from, next) {\n+      const { isLogin } = localStorage\n+      if (isLogin) {\n+        next({ name: 'Home' })\n+\n+      } else {\n+\n+      }\n+\n+    }\n   }\n   // {\n   //   path: '/about',\n   //   name: 'about',\n"
+                },
+                {
+                    "date": 1685520810919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,13 +16,11 @@\n     beforeEnter(to, from, next) {\n       const { isLogin } = localStorage\n       if (isLogin) {\n         next({ name: 'Home' })\n-\n       } else {\n-\n+        next()\n       }\n-\n     }\n   }\n   // {\n   //   path: '/about',\n"
+                },
+                {
+                    "date": 1685521178484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n   routes\n })\n router.beforeEach((to, from, next) => {\n   const { isLogin } = localStorage\n+  console.log(to, from, next)\n   if (isLogin || to.name === 'Login') {\n     next()\n   } else {\n     next({ name: 'Login' })\n"
+                },
+                {
+                    "date": 1685521205098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n router.beforeEach((to, from, next) => {\n   const { isLogin } = localStorage\n   console.log(to, from, next)\n   if (isLogin || to.name === 'Login') {\n+    console.log('111')\n     next()\n   } else {\n     next({ name: 'Login' })\n   }\n"
+                },
+                {
+                    "date": 1685521228082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,10 +39,10 @@\n router.beforeEach((to, from, next) => {\n   const { isLogin } = localStorage\n   console.log(to, from, next)\n   if (isLogin || to.name === 'Login') {\n+    next()\n     console.log('111')\n-    next()\n   } else {\n     next({ name: 'Login' })\n   }\n })\n"
+                },
+                {
+                    "date": 1685521281405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n     beforeEnter(to, from, next) {\n       const { isLogin } = localStorage\n       if (isLogin) {\n         next({ name: 'Home' })\n+        console.log('222')\n       } else {\n         next()\n       }\n     }\n"
+                },
+                {
+                    "date": 1685522248670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n   routes\n })\n router.beforeEach((to, from, next) => {\n   const { isLogin } = localStorage\n+  console.log(isLogin)\n   console.log(to, from, next)\n   if (isLogin || to.name === 'Login') {\n     next()\n     console.log('111')\n"
+                },
+                {
+                    "date": 1685523218655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,15 @@\n     name: 'Login',\n     component: Login,\n     beforeEnter(to, from, next) {\n       const { isLogin } = localStorage\n-      if (isLogin) {\n-        next({ name: 'Home' })\n-        console.log('222')\n-      } else {\n-        next()\n-      }\n+      // if (isLogin) {\n+      //   next({ name: 'Home' })\n+      //   console.log('222')\n+      // } else {\n+      //   next()\n+      // }\n+      \n     }\n   }\n   // {\n   //   path: '/about',\n"
+                },
+                {
+                    "date": 1685523240160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n       //   console.log('222')\n       // } else {\n       //   next()\n       // }\n-      \n+      isLogin ? next({ name: 'Home' }) : next()\n     }\n   }\n   // {\n   //   path: '/about',\n"
+                },
+                {
+                    "date": 1685523258807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,14 +40,15 @@\n })\n router.beforeEach((to, from, next) => {\n   const { isLogin } = localStorage\n   console.log(isLogin)\n-  console.log(to, from, next)\n-  if (isLogin || to.name === 'Login') {\n-    next()\n-    console.log('111')\n-  } else {\n-    next({ name: 'Login' })\n-  }\n+  console.log(to, from, next);\n+  // if (isLogin || to.name === 'Login') {\n+  //   next()\n+  //   console.log('111')\n+  // } else {\n+  //   next({ name: 'Login' })\n+  // }\n+  (isLogin || to.name === \"Login\") ? next() : next({ name: 'Login'});\n })\n \n export default router\n"
+                },
+                {
+                    "date": 1685523288302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,8 @@\n   //   console.log('111')\n   // } else {\n   //   next({ name: 'Login' })\n   // }\n-  (isLogin || to.name === \"Login\") ? next() : next({ name: 'Login'});\n+  (isLogin || to.name === \"Login\" ) ? next() : next({ name: 'Login' })\n })\n \n export default router\n"
+                },
+                {
+                    "date": 1685523471471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,8 @@\n   //   console.log('111')\n   // } else {\n   //   next({ name: 'Login' })\n   // }\n-  (isLogin || to.name === \"Login\" ) ? next() : next({ name: 'Login' })\n+  (isLogin || to.name === 'Login') ? next() : next({ name: 'Login' })\n })\n \n export default router\n"
+                },
+                {
+                    "date": 1685523578279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n const routes = [\n   {\n     path: '/',\n-    name: 'home',\n+    name: 'Home',\n     component: Home\n   },\n   {\n     path: '/login',\n"
+                },
+                {
+                    "date": 1685523607906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n       //   console.log('222')\n       // } else {\n       //   next()\n       // }\n-      isLogin ? next({ name: 'Home' }) : next()\n+      isLogin ? next({ name: '/' }) : next()\n     }\n   }\n   // {\n   //   path: '/about',\n"
+                },
+                {
+                    "date": 1685523629807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n       //   console.log('222')\n       // } else {\n       //   next()\n       // }\n-      isLogin ? next({ name: '/' }) : next()\n+      isLogin ? next({ name: 'Home' }) : next()\n     }\n   }\n   // {\n   //   path: '/about',\n"
+                },
+                {
+                    "date": 1685524243920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { createRouter, createWebHashHistory } from 'vue-router'\n // import HomeView from '../views/HomeView.vue'\n import Home from '../views/home/Home'\n import Login from '../views/login/Login'\n+import Register from '../views/login/Register'\n \n const routes = [\n   {\n     path: '/',\n@@ -22,8 +23,12 @@\n       //   next()\n       // }\n       isLogin ? next({ name: 'Home' }) : next()\n     }\n+  }, {\n+    path: '/register',\n+    name: 'Register',\n+    component: Register\n   }\n   // {\n   //   path: '/about',\n   //   name: 'about',\n"
+                },
+                {
+                    "date": 1685524948231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,11 +43,9 @@\n   history: createWebHashHistory(),\n   routes\n })\n router.beforeEach((to, from, next) => {\n-  const { isLogin } = localStorage\n-  console.log(isLogin)\n-  console.log(to, from, next);\n+  const { isLogin } = localStorage;\n   // if (isLogin || to.name === 'Login') {\n   //   next()\n   //   console.log('111')\n   // } else {\n"
+                },
+                {
+                    "date": 1685525024606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { createRouter, createWebHashHistory } from 'vue-router'\n // import HomeView from '../views/HomeView.vue'\n import Home from '../views/home/Home'\n import Login from '../views/login/Login'\n-import Register from '../views/login/Register'\n+import Register from '../views/register/Register'\n \n const routes = [\n   {\n     path: '/',\n"
+                },
+                {
+                    "date": 1685530371386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,10 @@\n   //   console.log('111')\n   // } else {\n   //   next({ name: 'Login' })\n   // }\n-  (isLogin || to.name === 'Login') ? next() : next({ name: 'Login' })\n+  const {name} = to;\n+  const isLoginOrRegister = (name === 'Login' || name === 'Register');\n+  (isLogin || isLoginOrRegister) ? next() : next({ name: 'Login' })\n })\n \n export default router\n"
+                },
+                {
+                    "date": 1685530378860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n   //   console.log('111')\n   // } else {\n   //   next({ name: 'Login' })\n   // }\n-  const {name} = to;\n+  const { name } = to\n   const isLoginOrRegister = (name === 'Login' || name === 'Register');\n   (isLogin || isLoginOrRegister) ? next() : next({ name: 'Login' })\n })\n \n"
+                },
+                {
+                    "date": 1685530384959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n   history: createWebHashHistory(),\n   routes\n })\n router.beforeEach((to, from, next) => {\n-  const { isLogin } = localStorage;\n+  const { isLogin } = localStorage\n   // if (isLogin || to.name === 'Login') {\n   //   next()\n   //   console.log('111')\n   // } else {\n"
+                },
+                {
+                    "date": 1685979870986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n const routes = [\n   {\n     path: '/',\n     name: 'Home',\n-    component: Home\n+    component: () => \n   },\n   {\n     path: '/login',\n     name: 'Login',\n"
+                },
+                {
+                    "date": 1685981189597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,18 @@\n import { createRouter, createWebHashHistory } from 'vue-router'\n // import HomeView from '../views/HomeView.vue'\n-import Home from '../views/home/Home'\n-import Login from '../views/login/Login'\n-import Register from '../views/register/Register'\n \n+\n const routes = [\n   {\n     path: '/',\n     name: 'Home',\n-    component: () => \n+    component: () => import(/* webpackChunkName: \"home\" */ '../views/home/Home')\n   },\n   {\n     path: '/login',\n     name: 'Login',\n-    component: Login,\n+    component: () => import(/* webpackChunkName: \"login\" */ '../views/login/Login'),\n     beforeEnter(to, from, next) {\n       const { isLogin } = localStorage\n       // if (isLogin) {\n       //   next({ name: 'Home' })\n@@ -26,9 +24,9 @@\n     }\n   }, {\n     path: '/register',\n     name: 'Register',\n-    component: Register\n+    component: () => import(/* webpackChunkName: \"login\" */ '../views/register/Register')\n   }\n   // {\n   //   path: '/about',\n   //   name: 'about',\n"
+                },
+                {
+                    "date": 1685981367118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,12 @@\n   }, {\n     path: '/register',\n     name: 'Register',\n     component: () => import(/* webpackChunkName: \"login\" */ '../views/register/Register')\n+  }, {\n+    path: '/shop',\n+    name: 'Shop',\n+    component: () => import(/* webpackChunkName: \"shop\" */ '../views/shop/Shop')\n   }\n   // {\n   //   path: '/about',\n   //   name: 'about',\n"
+                },
+                {
+                    "date": 1686020246362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     path: '/register',\n     name: 'Register',\n     component: () => import(/* webpackChunkName: \"login\" */ '../views/register/Register')\n   }, {\n-    path: '/shop',\n+    path: '/shop/:id',\n     name: 'Shop',\n     component: () => import(/* webpackChunkName: \"shop\" */ '../views/shop/Shop')\n   }\n   // {\n"
+                },
+                {
+                    "date": 1687769831596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import { createRouter, createWebHashHistory } from 'vue-router'\n // import HomeView from '../views/HomeView.vue'\n \n-\n const routes = [\n   {\n     path: '/',\n     name: 'Home',\n"
+                },
+                {
+                    "date": 1689059818762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,13 @@\n     name: 'Home',\n     component: () => import(/* webpackChunkName: \"home\" */ '../views/home/Home')\n   },\n   {\n+    path: '/',\n+    name: 'Home',\n+    component: () => import(/* webpackChunkName: \"home\" */ '../views/home/Home')\n+  },\n+  {\n     path: '/login',\n     name: 'Login',\n     component: () => import(/* webpackChunkName: \"login\" */ '../views/login/Login'),\n     beforeEnter(to, from, next) {\n"
+                },
+                {
+                    "date": 1689059832875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,11 @@\n     name: 'Home',\n     component: () => import(/* webpackChunkName: \"home\" */ '../views/home/Home')\n   },\n   {\n-    path: '/',\n-    name: 'Home',\n-    component: () => import(/* webpackChunkName: \"home\" */ '../views/home/Home')\n+    path: '/CartList',\n+    name: 'CartList',\n+    component: () => import(/* webpackChunkName: \"CartList\" */ '../views/cartList/CartList')\n   },\n   {\n     path: '/login',\n     name: 'Login',\n"
+                }
+            ],
+            "date": 1685073994155,
+            "name": "Commit-0",
+            "content": "import { createRouter, createWebHashHistory } from 'vue-router'\n// import HomeView from '../views/HomeView.vue'\n\nconst routes = [\n  // {\n  //   path: '/',\n  //   name: 'home',\n  //   component: HomeView\n  // },\n  // {\n  //   path: '/about',\n  //   name: 'about',\n  //   // route level code-splitting\n  //   // this generates a separate chunk (about.[hash].js) for this route\n  //   // which is lazy-loaded when the route is visited.\n  //   component: () => import(/* webpackChunkName: \"about\" */ '../views/AboutView.vue')\n  // }\n]\n\nconst router = createRouter({\n  history: createWebHashHistory(),\n  routes\n})\n\nexport default router\n"
+        }
+    ]
+}

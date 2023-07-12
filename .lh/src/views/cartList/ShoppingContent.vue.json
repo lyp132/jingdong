@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/cartList/ShoppingContent.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1689131763422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1689131779298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <template></template>\r\n <script>\r\n export default {\r\n-  name: ''\r\n+  name: 'ShoppingContent'\r\n }\r\n\\ No newline at end of file\n-</script>\n+</script>\r\n+\r\n+styles\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1689131805327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n-<template></template>\r\n+<template>\r\n+    <div>内容</div>\r\n+</template>\r\n <script>\r\n export default {\r\n   name: 'ShoppingContent'\r\n }\r\n\\ No newline at end of file\n </script>\r\n \r\n-styles\n+<style lang=\"scss\" scoped>\r\n+\r\n+</style>\r\n"
+                }
+            ],
+            "date": 1689131763422,
+            "name": "Commit-0",
+            "content": "<template>\r\n    \r\n</template>\r\n<script>\r\nexport default {\r\n    name: ''\r\n}\r\n</script>"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/views/shop/Shop.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1685981459230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685981488953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+<template></template>\r\n+<script>\r\n+export default {}\r\n+</script>\r\n+<style lang=\"scss\" scoped>\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685982087141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,12 @@\n-<template></template>\r\n+<template>\r\n+    <ShopInfo />\r\n+</template>\r\n <script>\r\n-export default {}\r\n+import ShopInfo from '../../components/ShopInfo.vue';\r\n+export default {\r\n+    name: 'Shop',\r\n+    components: {ShopInfo}\r\n+}\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685982147745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,12 @@\n <script>\r\n import ShopInfo from '../../components/ShopInfo.vue'\r\n export default {\r\n   name: 'Shop',\r\n-  components: { ShopInfo }\r\n+  components: { ShopInfo },\r\n+  setup() {\r\n+    const item = {}\r\n+  }\r\n }\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685982167360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,23 @@\n <template>\r\n   <ShopInfo />\r\n </template>\r\n <script>\r\n-import ShopInfo from '../../components/ShopInfo.vue'\r\n+import ShopInfo from '../../components/ShopInfo.vue';\r\n export default {\r\n   name: 'Shop',\r\n   components: { ShopInfo },\r\n   setup() {\r\n-    const item = {}\r\n+    const item = {\r\n+      _id: '1',\r\n+      name: '沃尔玛',\r\n+      imgUrl: 'http://www.dell-lee.com/imgs/vue3/near.png',\r\n+      sales: 10000,\r\n+      expressLimit: 0,\r\n+      expressPrice: 5,\r\n+      slogan: 'VIP尊享满89元减4元运费券'}\r\n   }\r\n+  return {item}\r\n }\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n </style>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1685981459230,
+            "name": "Commit-0",
+            "content": "<template>\r\n    \r\n</template>\r\n<script>\r\nexport default {\r\n    \r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n\r\n</style>"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/login/Register.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1685524294067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685524413495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<template></template>\r\n+<template>啊啊</template>\r\n <script>\r\n export default {}\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n"
+                },
+                {
+                    "date": 1685524426694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-<template>啊啊</template>\r\n+<template>\r\n+    div\r\n+</template>\r\n <script>\r\n export default {}\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n"
+                }
+            ],
+            "date": 1685524294067,
+            "name": "Commit-0",
+            "content": "<template>\r\n    \r\n</template>\r\n<script>\r\nexport default {\r\n    \r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n\r\n</style>"
+        }
+    ]
+}

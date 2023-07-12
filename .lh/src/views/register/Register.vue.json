@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/views/register/Register.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1685525016374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685525217051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n <template>\r\n   <div class=\"wrapper\">\r\n     <img src=\"\" alt=\"\" class=\"wrapper__img\" />\r\n-    <div class=\"wrapper__phone\"><input type=\"text\" /></div>\r\n-    <div class=\"wrapper__mima\"><input type=\"text\" /></div>\r\n+    <div class=\"wrapper__input\"><input class=\"wrapper__input__content\" type=\"text\" /></div>\r\n+    <div class=\"wrapper__input\"><input class=\"wrapper__input__content\" type=\"text\" /></div>\r\n+    <div class=\"wrapper__register-button\"></div>\r\n+    <div class=\"wrapper__register-link\"></div>\r\n   </div>\r\n </template>\r\n <script>\r\n export default {}\r\n"
+                },
+                {
+                    "date": 1685525287981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,9 @@\n <script>\r\n export default {}\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n+.wrapper{\r\n+  background: blueviolet;\r\n+  \r\n+}\r\n </style>\r\n"
+                },
+                {
+                    "date": 1685525329215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,7 @@\n </script>\r\n <style lang=\"scss\" scoped>\r\n .wrapper {\r\n   background: blueviolet;\r\n+  \r\n }\r\n </style>\r\n"
+                },
+                {
+                    "date": 1685525399435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,11 @@\n </script>\r\n <style lang=\"scss\" scoped>\r\n .wrapper {\r\n   background: blueviolet;\r\n+  position: relative;\r\n+  top: 50%;\r\n+  left: .4rem;\r\n+  right: .4rem\r\n+  width: 100%;\r\n }\r\n </style>\r\n"
+                }
+            ],
+            "date": 1685525016374,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div class=\"wrapper\">\r\n    <img src=\"\" alt=\"\" class=\"wrapper__img\" />\r\n    <div class=\"wrapper__phone\"><input type=\"text\" /></div>\r\n    <div class=\"wrapper__mima\"><input type=\"text\" /></div>\r\n  </div>\r\n</template>\r\n<script>\r\nexport default {}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n</style>\r\n"
+        }
+    ]
+}

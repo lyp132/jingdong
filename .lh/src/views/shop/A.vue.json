@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/views/shop/A.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1686097757504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1686097757504,
+            "name": "Commit-0",
+            "content": "<template>\r\n    \r\n</template>\r\n<script>\r\nexport default {\r\n    \r\n}\r\n</script>\r\n<style scoped>\r\n\r\n</style>"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/views/home/Docker.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1685414913264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685414934102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,37 @@\n   name: 'Docker'\r\n }\r\n </script>\r\n <style lang=\"scss\">\r\n+.docker {\r\n+  display: flex;\r\n+  position: absolute;\r\n+  box-sizing: border-box;\r\n+  padding: 0 0.18rem;\r\n+  left: 0;\r\n+  bottom: 0;\r\n+  width: 100%;\r\n+  height: 0.49rem;\r\n+  border-top: 1px solid $ocntent-bgColor;\r\n+  color: $content-fontcolor;\r\n+\r\n+  &__item {\r\n+    flex: 1;\r\n+    text-align: center;\r\n+\r\n+    .iconfont {\r\n+      font-size: 0.2rem;\r\n+      margin: 0.05rem 0 0.03rem 0;\r\n+    }\r\n+\r\n+    &--active {\r\n+      color: #1fa4fc;\r\n+    }\r\n+  }\r\n+\r\n+  &__title {\r\n+    font-size: 0.2rem;\r\n+    transform: scale(0.5, 0.5);\r\n+    transform-origin: center top;\r\n+  }\r\n+}\r\n </style>\r\n"
+                },
+                {
+                    "date": 1685414946544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n   name: 'Docker'\r\n }\r\n </script>\r\n <style lang=\"scss\">\r\n+@import '../../style/variables.scss';\r\n .docker {\r\n   display: flex;\r\n   position: absolute;\r\n   box-sizing: border-box;\r\n"
+                },
+                {
+                    "date": 1685416341797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   </div>\r\n </template>\r\n <script>\r\n export default {\r\n-  name: 'Docker'\r\n+  name: 'Docker',\r\n }\r\n </script>\r\n <style lang=\"scss\">\r\n @import '../../style/variables.scss';\r\n"
+                },
+                {
+                    "date": 1685416383312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,12 @@\n   </div>\r\n </template>\r\n <script>\r\n export default {\r\n-  name: 'Docker'\r\n+  name: 'Docker',\r\n+  setup() {\r\n+    \r\n+  }\r\n }\r\n </script>\r\n <style lang=\"scss\">\r\n @import '../../style/variables.scss';\r\n"
+                },
+                {
+                    "date": 1685416450802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,14 @@\n </template>\r\n <script>\r\n export default {\r\n   name: 'Docker',\r\n-  setup() {}\r\n+  setup() {\r\n+    const dockerList = [\r\n+      {}\r\n+    ]\r\n+    return {dockerList}\r\n+  }\r\n }\r\n </script>\r\n <style lang=\"scss\">\r\n @import '../../style/variables.scss';\r\n"
+                }
+            ],
+            "date": 1685414913264,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div class=\"docker\">\r\n    <div class=\"docker__item docker__item--active\">\r\n      <div class=\"iconfont\">&#xe600;</div>\r\n      <div class=\"docker__title\">首页</div>\r\n    </div>\r\n    <div class=\"docker__item\">\r\n      <div class=\"iconfont\">&#xe63c;</div>\r\n      <div class=\"docker__title\">购物车</div>\r\n    </div>\r\n    <div class=\"docker__item\">\r\n      <div class=\"iconfont\">&#xe605;</div>\r\n      <div class=\"docker__title\">订单</div>\r\n    </div>\r\n    <div class=\"docker__item\">\r\n      <div class=\"iconfont\">&#xe660;</div>\r\n      <div class=\"docker__title\">我的</div>\r\n    </div>\r\n  </div>\r\n</template>\r\n<script>\r\nexport default {\r\n  name: 'Docker'\r\n}\r\n</script>\r\n<style lang=\"scss\">\r\n</style>\r\n"
+        }
+    ]
+}

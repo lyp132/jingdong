@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/home/StaticPart.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1685413800625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685413840844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,7 @@\n \r\n <script>\r\n export default {}\r\n </script>\r\n-style\n\\ No newline at end of file\n+<style lang=\"scss\">\r\n+\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685413876586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,71 @@\n-<template></template>\r\n+<template>\r\n+    <div class=\"position\">\r\n+      <span class=\"iconfont position__icon\">&#xe630;</span>\r\n+      北京理工大学国防科技园2号楼10层北京理工大学国防科技园2号楼10层\r\n+      <span class=\"iconfont position__notice\">&#xe7e5;</span>\r\n+    </div>\r\n+    <div class=\"search\">\r\n+      <label for=\"prodectSearch\">\r\n+        <span class=\"iconfont\">&#xe65c;</span>\r\n+      </label>\r\n+      <input\r\n+        type=\"text\"\r\n+        id=\"prodectSearch\"\r\n+        placeholder=\"山姆会员商店优惠商品\"\r\n+      />\r\n+    </div>\r\n+    <div class=\"banner\">\r\n+      <img\r\n+        src=\"http://www.dell-lee.com/imgs/vue3/banner.jpg\"\r\n+        alt=\"\"\r\n+        class=\"banner__img\"\r\n+      />\r\n+    </div>\r\n+    <div class=\"icons\">\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/超市.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">超市便利</p>\r\n+      </div>\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/菜市场.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">菜市场</p>\r\n+      </div>\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/水果店.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">水果店</p>\r\n+      </div>\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/鲜花.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">鲜花</p>\r\n+      </div>\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/医药健康.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">医药健康</p>\r\n+      </div>\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/家居.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">家居</p>\r\n+      </div>\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/蛋糕.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">蛋糕</p>\r\n+      </div>\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/签到.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">签到</p>\r\n+      </div>\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/大牌免运.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">大牌免运</p>\r\n+      </div>\r\n+      <div class=\"icons__item\">\r\n+        <img src=\"../../assets/红包.png\" class=\"icons__item__img\" />\r\n+        <p class=\"icons__item__desc\">红包</p>\r\n+      </div>\r\n+    </div>\r\n+    <div class=\"gap\"></div>\r\n+</template>\r\n \r\n <script>\r\n export default {}\r\n </script>\r\n"
+                }
+            ],
+            "date": 1685413800625,
+            "name": "Commit-0",
+            "content": "<template>\r\n    \r\n</template>\r\n\r\n<script>\r\nexport default {\r\n    \r\n}\r\n</script>\r\nstyle"
+        }
+    ]
+}

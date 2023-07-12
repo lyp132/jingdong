@@ -1,0 +1,90 @@
+{
+    "sourceFile": ".eslintrc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1685085981545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685370025742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n   env: {\n     node: true\n   },\n   extends: [\n-    'plugin:vue/vue3-essential',\n-    '@vue/standard'\n+    'plugin:vue/vue3-essential'\n+    // '@vue/standard'\n   ],\n   parserOptions: {\n     parser: '@babel/eslint-parser'\n   },\n"
+                },
+                {
+                    "date": 1685370036905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n   env: {\n     node: true\n   },\n   extends: [\n-    'plugin:vue/vue3-essential'\n-    // '@vue/standard'\n+    'plugin:vue/vue3-essential',\n+    '@vue/standard'\n   ],\n   parserOptions: {\n     parser: '@babel/eslint-parser'\n   },\n"
+                },
+                {
+                    "date": 1685371648694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,9 @@\n     parser: '@babel/eslint-parser'\n   },\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'semi': 'error',\n+    \n   }\n }\n"
+                },
+                {
+                    "date": 1685371661492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+module.exports = {\n+  root: true,\n+  env: {\n+    node: true\n+  },\n+  extends: [\n+    'plugin:vue/vue3-essential',\n+    '@vue/standard'\n+  ],\n+  parserOptions: {\n+    parser: '@babel/eslint-parser'\n+  },\n+  rules: {\n+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    semi: 'error',\n+    \n+  }\n+}\n"
+                },
+                {
+                    "date": 1685371674508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,27 +12,7 @@\n   },\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    semi: 'error',\n-    \n+    semi: 'error'\n   }\n }\n-module.exports = {\n-  root: true,\n-  env: {\n-    node: true\n-  },\n-  extends: [\n-    'plugin:vue/vue3-essential',\n-    '@vue/standard'\n-  ],\n-  parserOptions: {\n-    parser: '@babel/eslint-parser'\n-  },\n-  rules: {\n-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'semi': 'error',\n-    \n-  }\n-}\n"
+                },
+                {
+                    "date": 1685371899036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+module.exports = {\n+  root: true,\n+  env: {\n+    node: true\n+  },\n+  extends: [\n+    'plugin:vue/vue3-essential',\n+    '@vue/standard'\n+  ],\n+  parserOptions: {\n+    parser: '@babel/eslint-parser'\n+  },\n+  rules: {\n+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    semi: 'error',\n+    \"comma-dangle\": [\"error\", \"never\"],\n+  }\n+}\n"
+                },
+                {
+                    "date": 1685371939167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,25 +13,7 @@\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     semi: 'error',\n-    \"comma-dangle\": [\"error\", \"never\"],\n+    'comma-dangle': ['error', 'always']\n   }\n }\n-module.exports = {\n-  root: true,\n-  env: {\n-    node: true\n-  },\n-  extends: [\n-    'plugin:vue/vue3-essential',\n-    '@vue/standard'\n-  ],\n-  parserOptions: {\n-    parser: '@babel/eslint-parser'\n-  },\n-  rules: {\n-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    semi: 'error'\n-  }\n-}\n"
+                },
+                {
+                    "date": 1685372008857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     semi: 'error',\n-    'comma-dangle': ['error', 'always']\n+    'comma-dangle': ['error', 'never']\n   }\n }\n"
+                },
+                {
+                    "date": 1685372029596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+module.exports = {\n+  root: true,\n+  env: {\n+    node: true\n+  },\n+  extends: [\n+    'plugin:vue/vue3-essential'\n+    // '@vue/standard'\n+  ],\n+  parserOptions: {\n+    parser: '@babel/eslint-parser'\n+  },\n+  rules: {\n+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    semi: 'error',\n+    'comma-dangle': ['error', 'never']\n+  }\n+}\n"
+                },
+                {
+                    "date": 1685372072896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+module.exports = {\n+  root: true,\n+  env: {\n+    node: true\n+  },\n+  extends: [\n+    'plugin:vue/vue3-essential'\n+    // '@vue/standard'\n+  ],\n+  parserOptions: {\n+    parser: '@babel/eslint-parser'\n+  },\n+  rules: {\n+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+\n+  }\n+}\n"
+                },
+                {
+                    "date": 1685372220645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+module.exports = {\n+  root: true,\n+  env: {\n+    node: true\n+  },\n+  extends: [\n+    'plugin:vue/vue3-essential'\n+    '@vue/standard'\n+  ],\n+  parserOptions: {\n+    parser: '@babel/eslint-parser'\n+  },\n+  rules: {\n+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+\n+  }\n+}\n"
+                },
+                {
+                    "date": 1685373224292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,72 +3,16 @@\n   env: {\n     node: true\n   },\n   extends: [\n-    'plugin:vue/vue3-essential'\n+    'plugin:vue/vue3-essential',\n     '@vue/standard'\n   ],\n   parserOptions: {\n     parser: '@babel/eslint-parser'\n   },\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'\n \n   }\n }\n-module.exports = {\n-  root: true,\n-  env: {\n-    node: true\n-  },\n-  extends: [\n-    'plugin:vue/vue3-essential'\n-    // '@vue/standard'\n-  ],\n-  parserOptions: {\n-    parser: '@babel/eslint-parser'\n-  },\n-  rules: {\n-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-\n-  }\n-}\n-module.exports = {\n-  root: true,\n-  env: {\n-    node: true\n-  },\n-  extends: [\n-    'plugin:vue/vue3-essential'\n-    // '@vue/standard'\n-  ],\n-  parserOptions: {\n-    parser: '@babel/eslint-parser'\n-  },\n-  rules: {\n-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    semi: 'error',\n-    'comma-dangle': ['error', 'never']\n-  }\n-}\n-module.exports = {\n-  root: true,\n-  env: {\n-    node: true\n-  },\n-  extends: [\n-    'plugin:vue/vue3-essential',\n-    '@vue/standard'\n-  ],\n-  parserOptions: {\n-    parser: '@babel/eslint-parser'\n-  },\n-  rules: {\n-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    semi: 'error',\n-    'comma-dangle': ['error', 'never']\n-  }\n-}\n"
+                },
+                {
+                    "date": 1685374389382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n     parser: '@babel/eslint-parser'\n   },\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'\n-\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'vue/multi-word-component-names': 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1685408901468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n     parser: '@babel/eslint-parser'\n   },\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'vue/multi-word-component-names': 'off'\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'\n+    // 'vue/multi-word-component-names': 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1685409418361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n     parser: '@babel/eslint-parser'\n   },\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'\n-    // 'vue/multi-word-component-names': 'off'\n+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n+    'vue/multi-word-component-names': 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1685417269408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,8 @@\n   },\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-    'vue/multi-word-component-names': 'off'\n+    'vue/multi-word-component-names': 'off',\n+    \n   }\n }\n"
+                },
+                {
+                    "date": 1685417302191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'vue/multi-word-component-names': 'off',\n-    \n+    'space-before-function-paren': 0\n   }\n }\n"
+                },
+                {
+                    "date": 1685676581962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,8 @@\n   rules: {\n     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n     'vue/multi-word-component-names': 'off',\n-    'space-before-function-paren': 0\n+    'space-before-function-paren': 0,\n+    'no-unused-vars': 'off'\n   }\n }\n"
+                }
+            ],
+            "date": 1685085981545,
+            "name": "Commit-0",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    node: true\n  },\n  extends: [\n    'plugin:vue/vue3-essential',\n    '@vue/standard'\n  ],\n  parserOptions: {\n    parser: '@babel/eslint-parser'\n  },\n  rules: {\n    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'\n  }\n}\n"
+        }
+    ]
+}

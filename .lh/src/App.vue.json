@@ -1,0 +1,138 @@
+{
+    "sourceFile": "src/App.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 30,
+            "patches": [
+                {
+                    "date": 1685073965989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685074182321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <template>\n   <div>\n-    \n+    <div>\n+      div\n+    </div>\n   </div>\n </template>\n \n <style lang=\"scss\">\n"
+                },
+                {
+                    "date": 1685074233111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n <template>\n   <div>\n-    <div>\n-      div\n+    <div class=\"docker\">\n+      <div id=\"dockor__item\"></div>\n+      <div id=\"dockor__item\"></div>\n+      <div id=\"dockor__item\"></div>\n+      <div id=\"dockor__item\"></div>\n     </div>\n   </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1685074310277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,17 @@\n <template>\n   <div>\n     <div class=\"docker\">\n-      <div id=\"dockor__item\"></div>\n-      <div id=\"dockor__item\"></div>\n-      <div id=\"dockor__item\"></div>\n-      <div id=\"dockor__item\"></div>\n+      <div id=\"dockor__item\">首页</div>\n+      <div id=\"dockor__item\">购物车</div>\n+      <div id=\"dockor__item\">订单</div>\n+      <div id=\"dockor__item\">我的</div>\n     </div>\n   </div>\n </template>\n \n <style lang=\"scss\">\n-\n+.docker {\n+  position: absolute;\n+  \n+}\n </style>\n"
+                },
+                {
+                    "date": 1685074404188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,11 @@\n \n <style lang=\"scss\">\n .docker {\n   position: absolute;\n+  left: 0;\n+  bottom: 0;\n+  width: 100%;\n+  height: .49rem;\n   \n }\n </style>\n"
+                },
+                {
+                    "date": 1685085620775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n   left: 0;\n   bottom: 0;\n   width: 100%;\n   height: .49rem;\n-  \n+  border: ;\n }\n </style>\n"
+                },
+                {
+                    "date": 1685085902484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,17 @@\n </template>\n \n <style lang=\"scss\">\n .docker {\n+  \n   position: absolute;\n   left: 0;\n   bottom: 0;\n   width: 100%;\n   height: .49rem;\n-  border: ;\n+  border-top: 1px solid #f1f1f1;\n+  background: green;\n }\n+.docker__item {\n+  flex: 1;\n+}\n </style>\n"
+                },
+                {
+                    "date": 1685086061192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n </template>\n \n <style lang=\"scss\">\n .docker {\n-  \n+  display: flex;\n   position: absolute;\n   left: 0;\n   bottom: 0;\n   width: 100%;\n"
+                },
+                {
+                    "date": 1685086199785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <template>\n   <div>\n     <div class=\"docker\">\n-      <div id=\"dockor__item\">首页</div>\n-      <div id=\"dockor__item\">购物车</div>\n-      <div id=\"dockor__item\">订单</div>\n-      <div id=\"dockor__item\">我的</div>\n+      <div id=\"docker__item\">首页</div>\n+      <div id=\"docker__item\">购物车</div>\n+      <div id=\"docker__item\">订单</div>\n+      <div id=\"docker__item\">我的</div>\n     </div>\n   </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1685086272291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <template>\n   <div>\n     <div class=\"docker\">\n-      <div id=\"docker__item\">首页</div>\n-      <div id=\"docker__item\">购物车</div>\n-      <div id=\"docker__item\">订单</div>\n-      <div id=\"docker__item\">我的</div>\n+      <span id=\"docker__item\">首页</span>\n+      <span id=\"docker__item\">购物车</span>\n+      <span id=\"docker__item\">订单</span>\n+      <span id=\"docker__item\">我的</span>\n     </div>\n   </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1685086296393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <template>\n   <div>\n     <div class=\"docker\">\n-      <span id=\"docker__item\">首页</span>\n-      <span id=\"docker__item\">购物车</span>\n-      <span id=\"docker__item\">订单</span>\n-      <span id=\"docker__item\">我的</span>\n+      <span class=\"docker__item\">首页</span>\n+      <span class=\"docker__item\">购物车</span>\n+      <span class=\"docker__item\">订单</span>\n+      <span class=\"docker__item\">我的</span>\n     </div>\n   </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1685086308835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,7 @@\n   background: green;\n }\n .docker__item {\n   flex: 1;\n+  text-align: center;\n }\n </style>\n"
+                },
+                {
+                    "date": 1685086474547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n <style lang=\"scss\">\n .docker {\n   display: flex;\n   position: absolute;\n+  padding: 0 .18rem;\n   left: 0;\n   bottom: 0;\n   width: 100%;\n   height: .49rem;\n"
+                },
+                {
+                    "date": 1685086534672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n <style lang=\"scss\">\n .docker {\n   display: flex;\n   position: absolute;\n+  box-sizing: border-box;\n   padding: 0 .18rem;\n   left: 0;\n   bottom: 0;\n   width: 100%;\n"
+                },
+                {
+                    "date": 1685089010489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n   <div>\n     <div class=\"docker\">\n-      <span class=\"docker__item\">首页</span>\n+      <span class=\"docker__item\"> <div class=\"iconfont\"></div> 首页</span>\n       <span class=\"docker__item\">购物车</span>\n       <span class=\"docker__item\">订单</span>\n       <span class=\"docker__item\">我的</span>\n     </div>\n"
+                },
+                {
+                    "date": 1685089032917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n   <div>\n     <div class=\"docker\">\n-      <span class=\"docker__item\"> <div class=\"iconfont\"></div> 首页</span>\n+      <span class=\"docker__item\"> <div class=\"iconfont\">&#xe600;</div> 首页</span>\n       <span class=\"docker__item\">购物车</span>\n       <span class=\"docker__item\">订单</span>\n       <span class=\"docker__item\">我的</span>\n     </div>\n"
+                },
+                {
+                    "date": 1685089214357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <template>\n   <div>\n     <div class=\"docker\">\n       <span class=\"docker__item\"> <div class=\"iconfont\">&#xe600;</div> 首页</span>\n-      <span class=\"docker__item\">购物车</span>\n-      <span class=\"docker__item\">订单</span>\n-      <span class=\"docker__item\">我的</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\"></div>购物车</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\"></div>订单</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\"></div>我的</span>\n     </div>\n   </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1685089237636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n   <div>\n     <div class=\"docker\">\n       <span class=\"docker__item\"> <div class=\"iconfont\">&#xe600;</div> 首页</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\"></div>购物车</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\">&#xe63c;</div>购物车</span>\n       <span class=\"docker__item\"><div class=\"iconfont\"></div>订单</span>\n       <span class=\"docker__item\"><div class=\"iconfont\"></div>我的</span>\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1685089243121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div>\n     <div class=\"docker\">\n       <span class=\"docker__item\"> <div class=\"iconfont\">&#xe600;</div> 首页</span>\n       <span class=\"docker__item\"><div class=\"iconfont\">&#xe63c;</div>购物车</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\"></div>订单</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\">&#xe605;</div>订单</span>\n       <span class=\"docker__item\"><div class=\"iconfont\"></div>我的</span>\n     </div>\n   </div>\n </template>\n"
+                },
+                {
+                    "date": 1685089250634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div class=\"docker\">\n       <span class=\"docker__item\"> <div class=\"iconfont\">&#xe600;</div> 首页</span>\n       <span class=\"docker__item\"><div class=\"iconfont\">&#xe63c;</div>购物车</span>\n       <span class=\"docker__item\"><div class=\"iconfont\">&#xe605;</div>订单</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\"></div>我的</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\">&#xe660;</div>我的</span>\n     </div>\n   </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1685091552050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   padding: 0 .18rem;\n   left: 0;\n   bottom: 0;\n   width: 100%;\n-  height: .49rem;\n+  height: .50rem;\n   border-top: 1px solid #f1f1f1;\n   background: green;\n }\n .docker__item {\n"
+                },
+                {
+                    "date": 1685092054647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   left: 0;\n   bottom: 0;\n   width: 100%;\n   height: .50rem;\n-  border-top: 1px solid #f1f1f1;\n+  border-top: 1rpx solid #f1f1f1;\n   background: green;\n }\n .docker__item {\n   flex: 1;\n"
+                },
+                {
+                    "date": 1685092069675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   left: 0;\n   bottom: 0;\n   width: 100%;\n   height: .50rem;\n-  border-top: 1rpx solid #f1f1f1;\n+  border-top: 1px solid #f1f1f1;\n   background: green;\n }\n .docker__item {\n   flex: 1;\n"
+                },
+                {
+                    "date": 1685092606289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   padding: 0 .18rem;\n   left: 0;\n   bottom: 0;\n   width: 100%;\n-  height: .50rem;\n+  height: .49rem;\n   border-top: 1px solid #f1f1f1;\n   background: green;\n }\n .docker__item {\n"
+                },
+                {
+                    "date": 1685093652162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,32 @@\n+<template>\n+  <div>\n+    <div class=\"docker\">\n+      <span class=\"docker__item\"> <div class=\"iconfont\">&#xe600;</div> 首页</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\">&#xe63c;</div>购物车</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\">&#xe605;</div>订单</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\">&#xe660;</div>我的</span>\n+    </div>\n+  </div>\n+</template>\n+\n+<style lang=\"scss\">\n+.docker {\n+  display: flex;\n+  position: absolute;\n+  box-sizing: border-box;\n+  padding: 0 .18rem;\n+  left: 0;\n+  bottom: 0;\n+  width: 100%;\n+  height: .49rem;\n+  border-top: 1px solid #f1f1f1;\n+  background: green;\n+}\n+.docker__item {\n+  flex: 1;\n+  text-align: center;\n+  .iconfont {\n+    \n+  }\n+}\n+</style>\n"
+                },
+                {
+                    "date": 1685093740614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <template>\n   <div>\n     <div class=\"docker\">\n-      <span class=\"docker__item\"> <div class=\"iconfont\">&#xe600;</div> 首页</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\">&#xe63c;</div>购物车</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\">&#xe605;</div>订单</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\">&#xe660;</div>我的</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe600;</div> 首页</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe63c;</div>购物车</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe605;</div>订单</span>\n+      <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe660;</div>我的</span>\n     </div>\n   </div>\n </template>\n \n@@ -25,37 +25,9 @@\n .docker__item {\n   flex: 1;\n   text-align: center;\n   .iconfont {\n-    \n+    font-size: .2rem;\n   }\n }\n-</style>\n-<template>\n-  <div>\n-    <div class=\"docker\">\n-      <span class=\"docker__item\"> <div class=\"iconfont\">&#xe600;</div> 首页</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\">&#xe63c;</div>购物车</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\">&#xe605;</div>订单</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\">&#xe660;</div>我的</span>\n-    </div>\n-  </div>\n-</template>\n \n-<style lang=\"scss\">\n-.docker {\n-  display: flex;\n-  position: absolute;\n-  box-sizing: border-box;\n-  padding: 0 .18rem;\n-  left: 0;\n-  bottom: 0;\n-  width: 100%;\n-  height: .49rem;\n-  border-top: 1px solid #f1f1f1;\n-  background: green;\n-}\n-.docker__item {\n-  flex: 1;\n-  text-align: center;\n-}\n </style>\n"
+                },
+                {
+                    "date": 1685093791896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\n   <div>\n     <div class=\"docker\">\n-      <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe600;</div> 首页</span>\n+      <span class=\"docker__item\">\n+        <div class=\"iconfont\" class=\"docker__title\">&#xe600;</div> 首页</span>\n       <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe63c;</div>购物车</span>\n       <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe605;</div>订单</span>\n       <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe660;</div>我的</span>\n     </div>\n"
+                },
+                {
+                    "date": 1685093874756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,23 @@\n <template>\n   <div>\n     <div class=\"docker\">\n       <span class=\"docker__item\">\n-        <div class=\"iconfont\" class=\"docker__title\">&#xe600;</div> 首页</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe63c;</div>购物车</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe605;</div>订单</span>\n-      <span class=\"docker__item\"><div class=\"iconfont\" class=\"docker__title\">&#xe660;</div>我的</span>\n+        <div class=\"iconfont\" class=\"docker__title\">&#xe600;</div>\n+        首页</span\n+      >\n+      <span class=\"docker__item\"\n+        ><div class=\"iconfont\" class=\"docker__title\">&#xe63c;</div>\n+        购物车</span\n+      >\n+      <span class=\"docker__item\"\n+        ><div class=\"iconfont\" class=\"docker__title\">&#xe605;</div>\n+        订单</span\n+      >\n+      <span class=\"docker__item\"\n+        ><div class=\"iconfont\" class=\"docker__title\">&#xe660;</div>\n+        我的</span\n+      >\n     </div>\n   </div>\n </template>\n \n@@ -14,21 +25,20 @@\n .docker {\n   display: flex;\n   position: absolute;\n   box-sizing: border-box;\n-  padding: 0 .18rem;\n+  padding: 0 0.18rem;\n   left: 0;\n   bottom: 0;\n   width: 100%;\n-  height: .49rem;\n+  height: 0.49rem;\n   border-top: 1px solid #f1f1f1;\n   background: green;\n }\n .docker__item {\n   flex: 1;\n   text-align: center;\n   .iconfont {\n-    font-size: .2rem;\n+    font-size: 0.2rem;\n   }\n }\n-\n </style>\n"
+                },
+                {
+                    "date": 1685093976624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n   <div>\n     <div class=\"docker\">\n       <span class=\"docker__item\">\n         <div class=\"iconfont\" class=\"docker__title\">&#xe600;</div>\n-        首页</span\n-      >\n+        首页\n+\t\t</span>\n       <span class=\"docker__item\"\n         ><div class=\"iconfont\" class=\"docker__title\">&#xe63c;</div>\n         购物车</span\n       >\n"
+                },
+                {
+                    "date": 1685094018798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n   <div>\n     <div class=\"docker\">\n       <span class=\"docker__item\">\n-        <div class=\"iconfont\" class=\"docker__title\">&#xe600;</div>\n+    \t<div class=\"iconfont\" class=\"docker__title\">&#xe600;</div>\n         首页\n       </span>\n       <span class=\"docker__item\"\n         ><div class=\"iconfont\" class=\"docker__title\">&#xe63c;</div>\n"
+                },
+                {
+                    "date": 1685094078810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n   <div>\n     <div class=\"docker\">\n       <span class=\"docker__item\">\n-        <div class=\"iconfont\" class=\"docker__title\">&#xe600;</div>\n+\t\t<div class=\"iconfont\" class=\"docker__title\">&#xe600;</div>\n         首页\n       </span>\n       <span class=\"docker__item\"\n         ><div class=\"iconfont\" class=\"docker__title\">&#xe63c;</div>\n"
+                }
+            ],
+            "date": 1685073965989,
+            "name": "Commit-0",
+            "content": "<template>\n  <div>\n    \n  </div>\n</template>\n\n<style lang=\"scss\">\n\n</style>\n"
+        }
+    ]
+}

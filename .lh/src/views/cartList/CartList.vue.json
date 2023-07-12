@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/cartList/CartList.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1689059777651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1689076648428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <template>cart list</template>\r\n \r\n <script>\r\n+import Doctor\r\n export default {\r\n   name: 'CartList'\r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1689076688063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>cart list</template>\r\n \r\n <script>\r\n-import Doctor\r\n+\r\n export default {\r\n   name: 'CartList'\r\n }\r\n </script>\r\n"
+                }
+            ],
+            "date": 1689059777651,
+            "name": "Commit-0",
+            "content": "<template>\r\n    cart list \r\n</template>\r\n\r\n<script>\r\nexport default {\r\n    name: 'CartList'\r\n}\r\n</script>"
+        }
+    ]
+}

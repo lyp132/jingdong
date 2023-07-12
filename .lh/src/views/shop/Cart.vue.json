@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/views/shop/Cart.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1686096166998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686096413257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-vue\n\\ No newline at end of file\n+vue\r\n"
+                },
+                {
+                    "date": 1686096559288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-vue\r\n+vue\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686097142389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n-vue\n\\ No newline at end of file\n+<template>\r\n+  \r\n+</template>\r\n+\r\n+<script>\r\n+export default {\r\n+\r\n+}\r\n+</script>\r\n+\r\n+<style>\r\n+\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686097162198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,7 @@\n export default {}\r\n </script>\r\n \r\n <style>\r\n-</style>\n\\ No newline at end of file\n+</style>\r\n+\r\n+console.log('');\r\n"
+                },
+                {
+                    "date": 1686097301331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,7 @@\n \r\n <script>\r\n export default {}\r\n </script>\r\n+<style lang=\"scss\" scoped>\r\n \r\n-<style>\r\n </style>\r\n-\r\n-console.log('');\r\n"
+                }
+            ],
+            "date": 1686096166998,
+            "name": "Commit-0",
+            "content": "vue"
+        }
+    ]
+}

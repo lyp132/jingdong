@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/ShopInfo.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1685981527969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685981570746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,23 @@\n-<template></template>\r\n+<template><div class=\"nearby__item\" v-for=\"item in nearbyList\" :key=\"item._id\">\r\n+    <img :src=\"item.imgUrl\" alt=\"\" class=\"nearby__item__img\" />\r\n+    <div class=\"nearby__content\">\r\n+      <div class=\"nearby__content__title\">{{ item.name }}</div>\r\n+      <div class=\"nearby__content__tags\">\r\n+        <span class=\"nearby__content__tag\">月售: {{ item.sales }}</span>\r\n+        <span class=\"nearby__content__tag\">\r\n+          起送: {{ item.expressLimit }}\r\n+        </span>\r\n+        <span class=\"nearby__content__tag\">\r\n+          基础运费: {{ item.expressPrice }}\r\n+        </span>\r\n+      </div>\r\n+      <p class=\"nearby__content__highlight\">\r\n+        {{ item.slogan }}\r\n+      </p>\r\n+    </div>\r\n+  </div></template>\r\n+\r\n <script>\r\n export default {}\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n"
+                },
+                {
+                    "date": 1685981592489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,10 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-export default {}\r\n+export default {\r\n+    name: 'ShopInfo'\r\n+}\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685981681306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <div class=\"nearby__item\" v-for=\"item in nearbyList\" :key=\"item._id\">\r\n+  <div class=\"nearby__item\" >\r\n     <img :src=\"item.imgUrl\" alt=\"\" class=\"nearby__item__img\" />\r\n     <div class=\"nearby__content\">\r\n       <div class=\"nearby__content__title\">{{ item.name }}</div>\r\n       <div class=\"nearby__content__tags\">\r\n"
+                }
+            ],
+            "date": 1685981527969,
+            "name": "Commit-0",
+            "content": "<template></template>\r\n<script>\r\nexport default {}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n</style>"
+        }
+    ]
+}

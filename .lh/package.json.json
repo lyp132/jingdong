@@ -1,0 +1,18 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1688209768496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1688209768496,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"jingdong\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"serve\": \"vue-cli-service serve\",\n    \"build\": \"vue-cli-service build\",\n    \"lint\": \"vue-cli-service lint\"\n  },\n  \"dependencies\": {\n    \"axios\": \"^1.4.0\",\n    \"core-js\": \"^3.8.3\",\n    \"vue\": \"^3.2.13\",\n    \"vue-router\": \"^4.0.3\",\n    \"vuex\": \"^4.0.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.12.16\",\n    \"@babel/eslint-parser\": \"^7.12.16\",\n    \"@vue/cli-plugin-babel\": \"~5.0.0\",\n    \"@vue/cli-plugin-eslint\": \"~5.0.0\",\n    \"@vue/cli-plugin-router\": \"~5.0.0\",\n    \"@vue/cli-plugin-vuex\": \"~5.0.0\",\n    \"@vue/cli-service\": \"~5.0.0\",\n    \"@vue/eslint-config-standard\": \"^6.1.0\",\n    \"eslint\": \"^7.32.0\",\n    \"eslint-plugin-import\": \"^2.25.3\",\n    \"eslint-plugin-node\": \"^11.1.0\",\n    \"eslint-plugin-promise\": \"^5.1.0\",\n    \"eslint-plugin-vue\": \"^8.0.3\",\n    \"sass\": \"^1.32.7\",\n    \"sass-loader\": \"^12.0.0\"\n  },\n  \"description\": \"## Project setup ``` yarn install ```\",\n  \"main\": \".eslintrc.js\",\n  \"author\": \"\",\n  \"license\": \"ISC\"\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/login/Login.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1685455710833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685455896023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,17 @@\n-<template></template>\r\n+<template>\r\n+    <div class=\"wrapper\">\r\n+        <img src=\"\" alt=\"\" class=\"wrapper__img\">\r\n+        <div class=\"wrapper__input\">\r\n+            <input type=\"text\" class=\"wrapper__input__content\">\r\n+        </div>\r\n+        <div class=\"wrapper__input\">\r\n+            <input type=\"text\" class=\"wrapper__input__content\">\r\n+        </div>\r\n+        <div class=\"wrapper__login-button\">登录</div>\r\n+        <div class=\"wrapper__login-link\">立即注册</div>\r\n+    </div>\r\n+</template>\r\n <script>\r\n export default {}\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n"
+                },
+                {
+                    "date": 1685455919810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"wrapper\">\r\n-    <img src=\"\" alt=\"\" class=\"wrapper__img\" />\r\n+    <img src=\"http://www.dell-lee.com/imgs/vue3/user.png\" alt=\"\" class=\"wrapper__img\" />\r\n     <div class=\"wrapper__input\">\r\n       <input type=\"text\" class=\"wrapper__input__content\" />\r\n     </div>\r\n     <div class=\"wrapper__input\">\r\n@@ -11,8 +11,10 @@\n     <div class=\"wrapper__login-link\">立即注册</div>\r\n   </div>\r\n </template>\r\n <script>\r\n-export default {}\r\n+export default {\r\n+    name: 'Login'\r\n+}\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n </style>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1685455710833,
+            "name": "Commit-0",
+            "content": "<template>\r\n    \r\n</template>\r\n<script>\r\nexport default {\r\n    \r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n\r\n</style>"
+        }
+    ]
+}
