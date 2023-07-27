@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 78,
+            "activePatchIndex": 105,
             "patches": [
                 {
                     "date": 1686103368769,
@@ -320,6 +320,114 @@
                 {
                     "date": 1689160110500,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   //     }\n   //   }\n   // }\n   // }\n-  return JSON.parse(localStorage.cartList) || {}\n+  return {} || JSON.parse(localStorage.cartList)\n   // return {}\n }\n \n export default createStore({\n"
+                },
+                {
+                    "date": 1689179910276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   //     }\n   //   }\n   // }\n   // }\n-  return {} || JSON.parse(localStorage.cartList)\n+  return JSON.parse(localStorage.cartList) || {}\n   // return {}\n }\n \n export default createStore({\n"
+                },
+                {
+                    "date": 1689337077745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,12 +43,13 @@\n       }\n       let product = shopInfo.productList[productId]\n       if (!product) {\n         productInfo.count = 0\n-        // productInfo.shownum = 0\n+        productInfo.number = 0\n         product = productInfo\n       }\n       // product.shownum += 1\n+      \n       product.count += num\n       if (product.count < 0) {\n         product.count = 0\n       }\n"
+                },
+                {
+                    "date": 1689337342089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n         productInfo.number = 0\n         product = productInfo\n       }\n       // product.shownum += 1\n-      \n+      for (Object.keys(shopInfo.productList))\n       product.count += num\n       if (product.count < 0) {\n         product.count = 0\n       }\n"
+                },
+                {
+                    "date": 1689337357263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,11 @@\n         productInfo.number = 0\n         product = productInfo\n       }\n       // product.shownum += 1\n-      for (Object.keys(shopInfo.productList))\n+      for (Object.keys(shopInfo.productList)) {\n+        \n+      }\n       product.count += num\n       if (product.count < 0) {\n         product.count = 0\n       }\n"
+                },
+                {
+                    "date": 1689337646139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,15 +47,17 @@\n         productInfo.number = 0\n         product = productInfo\n       }\n       // product.shownum += 1\n-      for (Object.keys(shopInfo.productList)) {\n-        \n-      }\n       product.count += num\n-      if (product.count < 0) {\n-        product.count = 0\n+      for (const key in shopInfo.productList) {\n+        if (shopInfo.productList[key].count < 0) {\n+          delete shopInfo.productList[key]\n+        }\n       }\n+      // if (product.count < 0) {\n+      //   product.count = 0\n+      // }\n       if (num > 0) { product.check = true }\n       shopInfo.productList[productId] = product\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n"
+                },
+                {
+                    "date": 1689337751125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,9 @@\n       }\n       // product.shownum += 1\n       product.count += num\n       for (const key in shopInfo.productList) {\n+        console.log(shopInfo.productList[key])\n         if (shopInfo.productList[key].count < 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n"
+                },
+                {
+                    "date": 1689337810440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,17 +48,17 @@\n         product = productInfo\n       }\n       // product.shownum += 1\n       product.count += num\n+      if (product.count < 0) {\n+        product.count = 0\n+      }\n       for (const key in shopInfo.productList) {\n         console.log(shopInfo.productList[key])\n-        if (shopInfo.productList[key].count < 0) {\n+        if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n-      // if (product.count < 0) {\n-      //   product.count = 0\n-      // }\n       if (num > 0) { product.check = true }\n       shopInfo.productList[productId] = product\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n"
+                },
+                {
+                    "date": 1689337855239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,10 @@\n       if (product.count < 0) {\n         product.count = 0\n       }\n       for (const key in shopInfo.productList) {\n-        console.log(shopInfo.productList[key])\n+        // console.log(shopInfo.productList[key])\n+        console.log(shopInfo.productList[key].count)\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n"
+                },
+                {
+                    "date": 1689337883226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,9 @@\n         // console.log(shopInfo.productList[key])\n         console.log(shopInfo.productList[key].count)\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n+          console.log('111')\n         }\n       }\n       if (num > 0) { product.check = true }\n       shopInfo.productList[productId] = product\n"
+                },
+                {
+                    "date": 1689337936159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,15 +52,16 @@\n       if (product.count < 0) {\n         product.count = 0\n       }\n       for (const key in shopInfo.productList) {\n-        // console.log(shopInfo.productList[key])\n-        console.log(shopInfo.productList[key].count)\n+        console.log(shopInfo.productList[key])\n+        // console.log(shopInfo.productList[key].count)\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n           console.log('111')\n         }\n       }\n+      console.log(shopInfo.productList)\n       if (num > 0) { product.check = true }\n       shopInfo.productList[productId] = product\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n"
+                },
+                {
+                    "date": 1689338081077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,12 +52,13 @@\n       if (product.count < 0) {\n         product.count = 0\n       }\n       for (const key in shopInfo.productList) {\n-        console.log(shopInfo.productList[key])\n+        // console.log(shopInfo.productList[key])\n         // console.log(shopInfo.productList[key].count)\n         if (shopInfo.productList[key].count === 0) {\n-          delete shopInfo.productList[key]\n+          // console.log(shopInfo.productList[key])\n+          console.log('222', delete shopInfo.productList[key])\n           console.log('111')\n         }\n       }\n       console.log(shopInfo.productList)\n"
+                },
+                {
+                    "date": 1689338154350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,14 +52,10 @@\n       if (product.count < 0) {\n         product.count = 0\n       }\n       for (const key in shopInfo.productList) {\n-        // console.log(shopInfo.productList[key])\n-        // console.log(shopInfo.productList[key].count)\n         if (shopInfo.productList[key].count === 0) {\n-          // console.log(shopInfo.productList[key])\n-          console.log('222', delete shopInfo.productList[key])\n-          console.log('111')\n+          delete shopInfo.productList[key]\n         }\n       }\n       console.log(shopInfo.productList)\n       if (num > 0) { product.check = true }\n"
+                },
+                {
+                    "date": 1689338340081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,16 +51,21 @@\n       product.count += num\n       if (product.count < 0) {\n         product.count = 0\n       }\n+      // for (const key in shopInfo.productList) {\n+      //   if (shopInfo.productList[key].count === 0) {\n+      //     delete shopInfo.productList[key]\n+      //   }\n+      // }\n+      console.log(shopInfo.productList)\n+      if (num > 0) { product.check = true }\n+      shopInfo.productList[productId] = product\n       for (const key in shopInfo.productList) {\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n-      console.log(shopInfo.productList)\n-      if (num > 0) { product.check = true }\n-      shopInfo.productList[productId] = product\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n     },\n     // 设置shopname\n"
+                },
+                {
+                    "date": 1689338411626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,13 +51,8 @@\n       product.count += num\n       if (product.count < 0) {\n         product.count = 0\n       }\n-      // for (const key in shopInfo.productList) {\n-      //   if (shopInfo.productList[key].count === 0) {\n-      //     delete shopInfo.productList[key]\n-      //   }\n-      // }\n       console.log(shopInfo.productList)\n       if (num > 0) { product.check = true }\n       shopInfo.productList[productId] = product\n       for (const key in shopInfo.productList) {\n"
+                },
+                {
+                    "date": 1689338543434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,8 +59,12 @@\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n+      const n = 0\n+      for (const key in shopInfo.productList) {\n+        shopInfo.productList[key].number = n + 1\n+      }\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n     },\n     // 设置shopname\n"
+                },
+                {
+                    "date": 1689338733467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n-      const n = 0\n+      const n = \n       for (const key in shopInfo.productList) {\n         shopInfo.productList[key].number = n + 1\n       }\n       state.cartList[shopId] = shopInfo\n"
+                },
+                {
+                    "date": 1689338750983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n-      const n = \n+      const n = Object.keys(shopInfo.productList)\n       for (const key in shopInfo.productList) {\n         shopInfo.productList[key].number = n + 1\n       }\n       state.cartList[shopId] = shopInfo\n"
+                },
+                {
+                    "date": 1689338763016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n         }\n       }\n       const n = Object.keys(shopInfo.productList)\n       for (const key in shopInfo.productList) {\n-        shopInfo.productList[key].number = n + 1\n+        shopInfo.productList[key].number = n - 1\n       }\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n     },\n"
+                },
+                {
+                    "date": 1689338804198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,8 +60,9 @@\n           delete shopInfo.productList[key]\n         }\n       }\n       const n = Object.keys(shopInfo.productList)\n+      console.log(n)\n       for (const key in shopInfo.productList) {\n         shopInfo.productList[key].number = n - 1\n       }\n       state.cartList[shopId] = shopInfo\n"
+                },
+                {
+                    "date": 1689338819854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n-      const n = Object.keys(shopInfo.productList)\n+      const n = Object.keys(shopInfo.productList).length\n       console.log(n)\n       for (const key in shopInfo.productList) {\n         shopInfo.productList[key].number = n - 1\n       }\n"
+                },
+                {
+                    "date": 1689338887026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,10 @@\n       }\n       const n = Object.keys(shopInfo.productList).length\n       console.log(n)\n       for (const key in shopInfo.productList) {\n-        shopInfo.productList[key].number = n - 1\n+        const i = n\n+        shopInfo.productList[key].number = i - 1\n       }\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n     },\n"
+                },
+                {
+                    "date": 1689339030104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,110 @@\n+import { createStore } from 'vuex'\n+\n+const setLocalCartList = (state) => {\n+  const { cartList } = state\n+  const cartListString = JSON.stringify(cartList)\n+  localStorage.cartList = cartListString\n+}\n+const getLocalCartList = () => {\n+  // {\n+  // 第一层级是商铺的id\n+  // shopId: {\n+  //   // 第二层是商品的id\n+  //   // 第二层的内容是商品内容以及购物数量\n+  //   shopName: '',\n+  //   productList: {\n+  //     productId: {\n+  //       _id: '1',\n+  //       name: '番茄250g/份',\n+  //       imgUrl: 'http://www.dell-lee.com/imgs/vue3/tomato.png',\n+  //       sales: 10,\n+  //       price: 33.6,\n+  //       oldPrice: 39.6,\n+  //       count: 2\n+  //     }\n+  //   }\n+  // }\n+  // }\n+  return JSON.parse(localStorage.cartList) || {}\n+  // return {}\n+}\n+\n+export default createStore({\n+  state: {\n+    cartList: getLocalCartList()\n+  },\n+  getters: {\n+  },\n+  mutations: {\n+    changeCartItemInfo(state, payload) {\n+      const { shopId, productId, productInfo, num } = payload\n+      const shopInfo = state.cartList[shopId] || {\n+        shopName: '', productList: {}\n+      }\n+      let product = shopInfo.productList[productId]\n+      if (!product) {\n+        productInfo.count = 0\n+        productInfo.number = 0\n+        product = productInfo\n+      }\n+      // product.shownum += 1\n+      product.count += num\n+      if (product.count < 0) {\n+        product.count = 0\n+      }\n+      console.log(shopInfo.productList)\n+      if (num > 0) { product.check = true }\n+      shopInfo.productList[productId] = product\n+      for (const key in shopInfo.productList) {\n+        if (shopInfo.productList[key].count === 0) {\n+          delete shopInfo.productList[key]\n+        }\n+      }\n+      const n = Object.keys(shopInfo.productList).length\n+      console.log(n)\n+      for (const key in shopInfo.productList) {\n+        shopInfo.productList[key].number =\n+      }\n+      state.cartList[shopId] = shopInfo\n+      setLocalCartList(state)\n+    },\n+    // 设置shopname\n+    shangeShopName(state, payload) {\n+      const { shopId, shopName } = payload\n+      const shopInfo = state.cartList[shopId] || {\n+        shopName: '',\n+        productList: {}\n+      }\n+      shopInfo.shopName = shopName\n+      state.cartList[shopId] = shopInfo\n+      setLocalCartList(state)\n+    },\n+    // 改变单个商品选中状态\n+    changeCartItemChecked(state, payload) {\n+      const { shopId, productId } = payload\n+      const product = state.cartList[shopId].productList[productId]\n+      product.check = !product.check\n+      setLocalCartList(state)\n+    },\n+    // 清空购物车\n+    cleanCartProducts(state, payload) {\n+      const { shopId } = payload\n+      state.cartList[shopId].productList = {}\n+      setLocalCartList(state)\n+    },\n+    setCartItemsChecked(state, payload) {\n+      const { shopId } = payload\n+      const products = state.cartList[shopId]?.productList\n+      if (products) {\n+        for (const i in products) {\n+          products[i].check = true\n+        }\n+      }\n+      setLocalCartList(state)\n+    }\n+  },\n+  actions: {\n+  },\n+  modules: {\n+  }\n+})\n"
+                },
+                {
+                    "date": 1689339046054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n       }\n       const n = Object.keys(shopInfo.productList).length\n       console.log(n)\n       for (const key in shopInfo.productList) {\n-        shopInfo.productList[key].number =\n+        shopInfo.productList[key].number = n\n       }\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n     },\n"
+                },
+                {
+                    "date": 1689339384038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,8 @@\n           delete shopInfo.productList[key]\n         }\n       }\n       const n = Object.keys(shopInfo.productList).length\n-      console.log(n)\n       for (const key in shopInfo.productList) {\n         shopInfo.productList[key].number = n\n       }\n       state.cartList[shopId] = shopInfo\n@@ -107,115 +106,4 @@\n   },\n   modules: {\n   }\n })\n-import { createStore } from 'vuex'\n-\n-const setLocalCartList = (state) => {\n-  const { cartList } = state\n-  const cartListString = JSON.stringify(cartList)\n-  localStorage.cartList = cartListString\n-}\n-const getLocalCartList = () => {\n-  // {\n-  // 第一层级是商铺的id\n-  // shopId: {\n-  //   // 第二层是商品的id\n-  //   // 第二层的内容是商品内容以及购物数量\n-  //   shopName: '',\n-  //   productList: {\n-  //     productId: {\n-  //       _id: '1',\n-  //       name: '番茄250g/份',\n-  //       imgUrl: 'http://www.dell-lee.com/imgs/vue3/tomato.png',\n-  //       sales: 10,\n-  //       price: 33.6,\n-  //       oldPrice: 39.6,\n-  //       count: 2\n-  //     }\n-  //   }\n-  // }\n-  // }\n-  return JSON.parse(localStorage.cartList) || {}\n-  // return {}\n-}\n-\n-export default createStore({\n-  state: {\n-    cartList: getLocalCartList()\n-  },\n-  getters: {\n-  },\n-  mutations: {\n-    changeCartItemInfo(state, payload) {\n-      const { shopId, productId, productInfo, num } = payload\n-      const shopInfo = state.cartList[shopId] || {\n-        shopName: '', productList: {}\n-      }\n-      let product = shopInfo.productList[productId]\n-      if (!product) {\n-        productInfo.count = 0\n-        productInfo.number = 0\n-        product = productInfo\n-      }\n-      // product.shownum += 1\n-      product.count += num\n-      if (product.count < 0) {\n-        product.count = 0\n-      }\n-      console.log(shopInfo.productList)\n-      if (num > 0) { product.check = true }\n-      shopInfo.productList[productId] = product\n-      for (const key in shopInfo.productList) {\n-        if (shopInfo.productList[key].count === 0) {\n-          delete shopInfo.productList[key]\n-        }\n-      }\n-      const n = Object.keys(shopInfo.productList).length\n-      console.log(n)\n-      for (const key in shopInfo.productList) {\n-        const i = n\n-        shopInfo.productList[key].number = i - 1\n-      }\n-      state.cartList[shopId] = shopInfo\n-      setLocalCartList(state)\n-    },\n-    // 设置shopname\n-    shangeShopName(state, payload) {\n-      const { shopId, shopName } = payload\n-      const shopInfo = state.cartList[shopId] || {\n-        shopName: '',\n-        productList: {}\n-      }\n-      shopInfo.shopName = shopName\n-      state.cartList[shopId] = shopInfo\n-      setLocalCartList(state)\n-    },\n-    // 改变单个商品选中状态\n-    changeCartItemChecked(state, payload) {\n-      const { shopId, productId } = payload\n-      const product = state.cartList[shopId].productList[productId]\n-      product.check = !product.check\n-      setLocalCartList(state)\n-    },\n-    // 清空购物车\n-    cleanCartProducts(state, payload) {\n-      const { shopId } = payload\n-      state.cartList[shopId].productList = {}\n-      setLocalCartList(state)\n-    },\n-    setCartItemsChecked(state, payload) {\n-      const { shopId } = payload\n-      const products = state.cartList[shopId]?.productList\n-      if (products) {\n-        for (const i in products) {\n-          products[i].check = true\n-        }\n-      }\n-      setLocalCartList(state)\n-    }\n-  },\n-  actions: {\n-  },\n-  modules: {\n-  }\n-})\n"
+                },
+                {
+                    "date": 1689339711797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,10 +60,10 @@\n           delete shopInfo.productList[key]\n         }\n       }\n       const n = Object.keys(shopInfo.productList).length\n-      for (const key in shopInfo.productList) {\n-        shopInfo.productList[key].number = n\n+      for (const key in Object.keys(shopInfo.productList)) {\n+        shopInfo.productList[key].number = key\n       }\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n     },\n"
+                },
+                {
+                    "date": 1689339719497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,8 @@\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n-      \n       for (const key in Object.keys(shopInfo.productList)) {\n         shopInfo.productList[key].number = key\n       }\n       state.cartList[shopId] = shopInfo\n"
+                },
+                {
+                    "date": 1689339779032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,11 @@\n         if (shopInfo.productList[key].count === 0) {\n           delete shopInfo.productList[key]\n         }\n       }\n-      for (const key in Object.keys(shopInfo.productList)) {\n-        shopInfo.productList[key].number = key\n+      const n = Object.keys(shopInfo.productList)\n+      for (const key in n) {\n+        shopInfo.productList[n[key]].number = key\n       }\n       state.cartList[shopId] = shopInfo\n       setLocalCartList(state)\n     },\n"
                 }
             ],
             "date": 1686103368769,

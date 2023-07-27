@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/mine/Mine.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1690025015789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690025025350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   我的\r\n-  <Docker />\r\n+  <Docker :/>\r\n </template>\r\n <script>\r\n import Docker '../../components/Docker.vue'\r\n \r\n"
+                },
+                {
+                    "date": 1690025041068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   我的\r\n-  <Docker :/>\r\n+  <Docker :currentIndex=\"3\"/>\r\n </template>\r\n <script>\r\n import Docker '../../components/Docker.vue'\r\n \r\n"
+                }
+            ],
+            "date": 1690025015789,
+            "name": "Commit-0",
+            "content": "<template>\r\n    我的\r\n    <Docker />\r\n</template>\r\n<script>\r\nimport Docker '../../components/Docker.vue'\r\n\r\nexport default {\r\n    name: 'Mine',\r\n    components: {Docker}\r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

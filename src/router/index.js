@@ -8,9 +8,39 @@ const routes = [
     component: () => import(/* webpackChunkName: "home" */ '../views/home/Home')
   },
   {
-    path: '/CartList',
+    path: '/cartList',
     name: 'CartList',
     component: () => import(/* webpackChunkName: "CartList" */ '../views/cartList/CartList')
+  },
+  {
+    path: '/orderList',
+    name: 'OrderList',
+    component: () => import(/* webpackChunkName: "Orderlist" */ '../views/orderList/OrderList')
+  },
+  {
+    path: '/mine',
+    name: 'Mine',
+    component: () => import(/* webpackChunkName: "Mine" */ '../views/mine/Mine')
+  },
+  {
+    path: '/myAddressList',
+    name: 'MyAddressList',
+    component: () => import(/* webpackChunkName: "MyAddressList" */ '../views/myAddressList/MyAddressList')
+  },
+  {
+    path: '/addressEdit',
+    name: 'AddressEdit',
+    component: () => import(/* webpackChunkName: "AddressEdit" */ '../views/addressEdit/AddressEdit')
+  },
+  {
+    path: '/addressSelect',
+    name: 'AddressSelect',
+    component: () => import(/* webpackChunkName: "AddressSelect" */ '../views/addressSelect/AddressSelect')
+  },
+  {
+    path: '/orderConfirmation/:id',
+    name: 'OrderConfirmation',
+    component: () => import(/* webpackChunkName: "OrderConfirmation" */ '../views/orderConfirmation/OrderConfirmation')
   },
   {
     path: '/login',

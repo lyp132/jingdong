@@ -32,12 +32,12 @@ const useChooseDocker = () => {
     {
       icon: '&#xe605;',
       title: '订单',
-      to: { name: 'Home' }
+      to: { name: 'OrderList' }
     },
     {
       icon: '&#xe660;',
       title: '我的',
-      to: { name: 'Home' }
+      to: { name: 'Mine' }
     }
   ])
 

@@ -6,10 +6,12 @@
 
 <script>
 import Docker from '../../components/Docker.vue'
+// import ShoppingContent from '../../components/ShoppingContent.vue'
 import ShoppingContent from './ShoppingContent.vue'
 export default {
   name: 'CartList',
-  components: { Docker, ShoppingContent }
+  components: { Docker, ShoppingContent },
+  setup() {}
 }
 </script>
 

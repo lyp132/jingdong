@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/orderConfirmation/Order.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1689693907820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1689693917105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n-<template></template>\r\n+<template><div class=\"order\">\r\n+    <div class=\"order__price\">实付金额 &yen; {{ calculations.price }}</div>\r\n+    <div class=\"order__btn\">提交订单</div>\r\n+  </div></template>\r\n <script>\r\n export default {\r\n   name: 'Order'\r\n }\r\n"
+                },
+                {
+                    "date": 1689693928990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,28 @@\n export default {\r\n   name: 'Order'\r\n }\r\n </script>\r\n-<style lang=\"scss\" scoped>\r\n+<style lang=\"scss\" scoped>.order {\r\n+    position: absolute;\r\n+    left: 0;\r\n+    right: 0;\r\n+    bottom: 0;\r\n+    display: flex;\r\n+    height: 0.48rem;\r\n+    line-height: 0.48rem;\r\n+    background-color: #fff;\r\n+    &__price {\r\n+      flex: 1;\r\n+      text-indent: 0.24rem;\r\n+      font-size: 0.14rem;\r\n+      color: $content-fontcolor;\r\n+    }\r\n+    &__btn {\r\n+      text-align: center;\r\n+      width: 0.98rem;\r\n+      background: #4fb0f9;\r\n+      color: #fff;\r\n+      font-size: 0.14rem;\r\n+    }\r\n+  }\r\n </style>\r\n"
+                }
+            ],
+            "date": 1689693907820,
+            "name": "Commit-0",
+            "content": "<template>\r\n    \r\n</template>\r\n<script>\r\nexport default {\r\n    name: 'Order'\r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/orderConfirmation/ProductList.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1689693632169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1689693648864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,5 +35,74 @@\n   name: 'ProductList'\r\n }\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n+.products {\r\n+  margin: 0.38rem 0.18rem 0.38rem 0.18rem;\r\n+\r\n+  background-color: #eee;\r\n+\r\n+  &__title {\r\n+    padding: 0.16rem;\r\n+    background-color: #fff;\r\n+    color: #333;\r\n+    font-size: 0.16rem;\r\n+  }\r\n+  &__wrapper {\r\n+    overflow-y: scroll;\r\n+    position: absolute;\r\n+    left: 0.18rem;\r\n+    right: 0.18rem;\r\n+    bottom: 0.49rem;\r\n+    top: 2.46rem;\r\n+  }\r\n+  &__list {\r\n+    background-color: #fff;\r\n+  }\r\n+  &__info {\r\n+    display: flex;\r\n+    padding: 0 0.16rem 0.16rem 0.16rem;\r\n+    background-color: #fff;\r\n+    position: relative;\r\n+    &__img {\r\n+      width: 0.46rem;\r\n+      height: 0.46rem;\r\n+      margin-right: 0.16rem;\r\n+    }\r\n+    &__detail {\r\n+      font-size: 0.14rem;\r\n+      flex: 1;\r\n+      &__name {\r\n+        line-height: 0.2rem;\r\n+        color: #333;\r\n+      }\r\n+      &__price {\r\n+        display: flex;\r\n+        margin: 0.06rem 0;\r\n+        line-height: 0.14rem;\r\n+        color: #e93b3b;\r\n+      }\r\n+      &__total {\r\n+        // position: absolute;\r\n+        flex: 1;\r\n+        text-align: right;\r\n+      }\r\n+    }\r\n+  }\r\n+  &__fold {\r\n+    height: 0.44rem;\r\n+    font-size: 0.14rem;\r\n+    color: #999;\r\n+    div {\r\n+      background-color: #f5f5f5;\r\n+      height: 0.28rem;\r\n+      margin: 0 0.16rem;\r\n+      margin-bottom: 0.16rem;\r\n+      line-height: 0.28rem;\r\n+      text-align: center;\r\n+    }\r\n+    .iconfont {\r\n+      margin-left: 0.08rem;\r\n+    }\r\n+  }\r\n+}\r\n </style>\r\n"
+                },
+                {
+                    "date": 1689693748621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,12 @@\n   </div>\r\n </template>\r\n <script>\r\n export default {\r\n-  name: 'ProductList'\r\n+  name: 'ProductList',\r\n+  setup() {\r\n+    \r\n+  }\r\n }\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n .products {\r\n"
+                }
+            ],
+            "date": 1689693632169,
+            "name": "Commit-0",
+            "content": "<template>\r\n    <div class=\"products\">\r\n      <!-- 商店标题 -->\r\n      <div class=\"products__title\">{{ shopName }}</div>\r\n      <!-- 商店内容 -->\r\n      <div class=\"products__wrapper\">\r\n        <div class=\"products__list\">\r\n          <div\r\n            class=\"products__info\"\r\n            v-for=\"item in productList\"\r\n            :key=\"item._id\"\r\n          >\r\n            <img class=\"products__info__img\" :src=\"item.imgUrl\" alt=\"\" />\r\n            <div class=\"products__info__detail\">\r\n              <div class=\"products__info__detail__name\">\r\n                {{ item.name }}\r\n              </div>\r\n              <div class=\"products__info__detail__price\">\r\n                <span> &yen; {{ item.price }} x {{ item.count }} </span>\r\n                <span class=\"products__info__detail__total\">\r\n                  &yen; {{ item.price * item.count }}\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!-- 折叠 -->\r\n          <div class=\"products__fold\" v-if=\"true\">\r\n            <div>\r\n              共计几件/几 kg\r\n              <span class=\"iconfont\">&#xe65e;</span>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n</template>\r\n<script>\r\nexport default {\r\n  name: 'ProductList'\r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

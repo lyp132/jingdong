@@ -9,6 +9,14 @@
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
+  <script>
+    var width = document.documentElement.clientWidth || document.body.clientWidth
+    console.log(width)
+
+    var ratio = width / 390
+    var fontSize = 100 * ratio
+    document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'
+  </script>
 </head>
 
 <body>

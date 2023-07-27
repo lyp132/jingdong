@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/addressEdit/Addressedit.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1690129664035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690130129322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,13 @@\n-<template>AddressEdit</template>\r\n+<template><div class=\"wrapper\">\r\n+    <div class=\"top\">\r\n+      <span class=\"top__icon iconfont\">&#xe601;</span>\r\n+      <span class=\"top__des\">管理收货地址</span>\r\n+      <router-link to=\"/addressEdit\">\r\n+        <span class=\"top__newbuilt\">新建</span>\r\n+      </router-link>\r\n+    </div>\r\n+</div></template>\r\n <script>\r\n export default {\r\n   name: 'AddressEdit'\r\n }\r\n"
+                },
+                {
+                    "date": 1690130145141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,36 @@\n   name: 'AddressEdit'\r\n }\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n+.wrapper {\r\n+  position: absolute;\r\n+  top: 0;\r\n+  right: 0;\r\n+  bottom: 0.5rem;\r\n+  left: 0;\r\n+  background-color: #f8f8f8;\r\n+}\r\n+.top {\r\n+  display: flex;\r\n+  align-items: center;\r\n+  height: 0.44rem;\r\n+  background-color: #fff;\r\n+  font-size: 0.16rem;\r\n+  color: #333;\r\n+  a {\r\n+    text-decoration: none;\r\n+  }\r\n+  &__icon {\r\n+    margin-left: 0.18rem;\r\n+    font-size: 0.2rem;\r\n+    color: #b6b6b6;\r\n+  }\r\n+  &__des {\r\n+    flex: 1;\r\n+    text-align: center;\r\n+  }\r\n+  &__newbuilt {\r\n+    margin-right: 0.18rem;\r\n+  }\r\n+}\r\n </style>\r\n"
+                }
+            ],
+            "date": 1690129664035,
+            "name": "Commit-0",
+            "content": "<template>\r\n    AddressEdit\r\n</template>\r\n<script>\r\nexport default {\r\n    name: 'AddressEdit'\r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

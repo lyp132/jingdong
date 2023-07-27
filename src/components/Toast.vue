@@ -29,10 +29,10 @@ export const useToastEffect = () => {
 <style lang="scss" scoped>
 @import '../style/variables.scss';
 .toast {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   padding: 0.1rem;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 0.05rem;

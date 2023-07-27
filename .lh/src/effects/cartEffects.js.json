@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/effects/cartEffects.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1689178198522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1689178319658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n-\r\n+import { computed } from 'vue'\r\n import { useStore } from 'vuex'\r\n // 购物车相关逻辑\r\n-export const useCommonCartEffect = () => {\r\n+export const useCommonCartEffect = (shopId) => {\r\n   const store = useStore()\r\n   const cartList = store.state.cartList\r\n   const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n     store.commit('changeCartItemInfo', {\r\n@@ -11,6 +11,11 @@\n       productInfo,\r\n       num\r\n     })\r\n   }\r\n-  return { cartList, changeCartItemInfo }\r\n+   // 获取购物车内商品数据\r\n+   const productList = computed(() => {\r\n+    const productList = cartList[shopId]?.productList || []\r\n+    return productList\r\n+  })\r\n+  return { cartList,productList, changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1689178344958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,6 @@\n    const productList = computed(() => {\r\n     const productList = cartList[shopId]?.productList || []\r\n     return productList\r\n   })\r\n-  return { cartList,productList, changeCartItemInfo }\r\n+  return { cartList, productList, changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1689179109558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n       productInfo,\r\n       num\r\n     })\r\n   }\r\n-   // 获取购物车内商品数据\r\n-   const productList = computed(() => {\r\n+  // 获取购物车内商品数据\r\n+  const productList = computed(() => {\r\n     const productList = cartList[shopId]?.productList || []\r\n     return productList\r\n   })\r\n   return { cartList, productList, changeCartItemInfo }\r\n"
+                },
+                {
+                    "date": 1689179138911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,7 @@\n   const productList = computed(() => {\r\n     const productList = cartList[shopId]?.productList || []\r\n     return productList\r\n   })\r\n+  const shopname\r\n   return { cartList, productList, changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1689179179255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,6 @@\n   const productList = computed(() => {\r\n     const productList = cartList[shopId]?.productList || []\r\n     return productList\r\n   })\r\n-  const shopname\r\n   return { cartList, productList, changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1689180278918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,7 @@\n   const productList = computed(() => {\r\n     const productList = cartList[shopId]?.productList || []\r\n     return productList\r\n   })\r\n-  return { cartList, productList, changeCartItemInfo }\r\n+  const shopName = cartList[shopId].shopName\r\n+  return { cartList, shopName, productList, changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1689240534877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,10 @@\n   const productList = computed(() => {\r\n     const productList = cartList[shopId]?.productList || []\r\n     return productList\r\n   })\r\n-  const shopName = cartList[shopId].shopName\r\n+  const shopName = computed(() => {\r\n+    const shopName = cartList[shopId]?.shopName || ''\r\n+    return shopName\r\n+  })\r\n   return { cartList, shopName, productList, changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1689326608361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,34 @@\n   const shopName = computed(() => {\r\n     const shopName = cartList[shopId]?.shopName || ''\r\n     return shopName\r\n   })\r\n+  const calculations = computed(() => {\r\n+    const productList = cartList[shopId]?.productList\r\n+    const result = { total: 0, price: 0, allChecked: true }\r\n+    if (productList) {\r\n+      let count = 0\r\n+      for (const i in productList) {\r\n+        const product = productList[i]\r\n+        result.total += product.count\r\n+        if (product.check) {\r\n+          result.price += product.count * product.price\r\n+        } else {\r\n+          result.allChecked = false\r\n+        }\r\n+        count += product.count\r\n+      }\r\n+      if (count === 0) {\r\n+        result.allChecked = false\r\n+      }\r\n+    }\r\n+    if (typeof productList === 'undefined') {\r\n+      result.allChecked = false\r\n+    } else if (Object.keys(productList).length === 0) {\r\n+      // console.log(Object.keys(productList))\r\n+      result.allChecked = false\r\n+    }\r\n+    result.price = result.price.toFixed(2)\r\n+    return result\r\n+  })\r\n   return { cartList, shopName, productList, changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1689326683908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,14 @@\n   const productList = computed(() => {\r\n     const productList = cartList[shopId]?.productList || []\r\n     return productList\r\n   })\r\n+  // 获取商店名\r\n   const shopName = computed(() => {\r\n     const shopName = cartList[shopId]?.shopName || ''\r\n     return shopName\r\n   })\r\n+  // 获取计算属性，总价，总数\r\n   const calculations = computed(() => {\r\n     const productList = cartList[shopId]?.productList\r\n     const result = { total: 0, price: 0, allChecked: true }\r\n     if (productList) {\r\n@@ -48,6 +50,6 @@\n     }\r\n     result.price = result.price.toFixed(2)\r\n     return result\r\n   })\r\n-  return { cartList, shopName, productList, changeCartItemInfo }\r\n+  return { cartList, shopName, productList, calculations, changeCartItemInfo }\r\n }\r\n"
+                },
+                {
+                    "date": 1689700816155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     })\r\n   }\r\n   // 获取购物车内商品数据\r\n   const productList = computed(() => {\r\n-    const productList = cartList[shopId]?.productList || []\r\n+    const productList = cartList[shopId]?.productList || {}\r\n     return productList\r\n   })\r\n   // 获取商店名\r\n   const shopName = computed(() => {\r\n"
+                },
+                {
+                    "date": 1689756839854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,16 @@\n   }\r\n   // 获取购物车内商品数据\r\n   const productList = computed(() => {\r\n     const productList = cartList[shopId]?.productList || {}\r\n-    return productList\r\n+    const notEmptyProductList = {}\r\n+    for (const i in productList) {\r\n+      const product = productList[i]\r\n+      if (product.count > 0) {\r\n+        notEmptyProductList[i] = product\r\n+      }\r\n+    }\r\n+    return notEmptyProductList\r\n   })\r\n   // 获取商店名\r\n   const shopName = computed(() => {\r\n     const shopName = cartList[shopId]?.shopName || ''\r\n"
+                }
+            ],
+            "date": 1689178198522,
+            "name": "Commit-0",
+            "content": "\r\nimport { useStore } from 'vuex'\r\n// 购物车相关逻辑\r\nexport const useCommonCartEffect = () => {\r\n  const store = useStore()\r\n  const cartList = store.state.cartList\r\n  const changeCartItemInfo = (shopId, productId, productInfo, num) => {\r\n    store.commit('changeCartItemInfo', {\r\n      shopId,\r\n      productId,\r\n      productInfo,\r\n      num\r\n    })\r\n  }\r\n  return { cartList, changeCartItemInfo }\r\n}\r\n"
+        }
+    ]
+}

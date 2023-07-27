@@ -3,11 +3,23 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1685374278580,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690273853058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,8 @@\n module.exports = defineConfig({\n   transpileDependencies: true,\n   lintOnSave: false\n })\n+\n+module.exports = {\n+  publicPath: '/jingdong'\n+}\n"
+                },
+                {
+                    "date": 1690273994776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+const { defineConfig } = require('@vue/cli-service')\n+module.exports = defineConfig({\n+  transpileDependencies: true,\n+  lintOnSave: false\n+})\n"
+                },
+                {
+                    "date": 1690274051872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,6 @@\n const { defineConfig } = require('@vue/cli-service')\n module.exports = defineConfig({\n+  publicPath: '/jingdong',\n   transpileDependencies: true,\n   lintOnSave: false\n })\n-const { defineConfig } = require('@vue/cli-service')\n-module.exports = defineConfig({\n-  transpileDependencies: true,\n-  lintOnSave: false\n-})\n-\n-module.exports = {\n-  publicPath: '/jingdong'\n-}\n"
                 }
             ],
             "date": 1685374278580,

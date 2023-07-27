@@ -43,23 +43,23 @@
           </div>
           <div class="product__number">
             <span
-              class="product__number__minus"
+              class="product__number__minus iconfont"
               @click="
                 () => {
                   changeCartItemInfo(shopId, item._id, item, -1)
                 }
               "
-              >-</span
+              >&#xe8b1;</span
             >
-            {{ item.count || 0 }}
+            {{ cartList?.[shopId]?.productList?.[item._id]?.count || 0 }}
             <span
-              class="product__number__plus"
+              class="product__number__plus iconfont"
               @click="
                 () => {
                   changeCartItemInfo(shopId, item._id, item, 1)
                 }
               "
-              >+</span
+              >&#xe602;</span
             >
           </div>
         </div>
@@ -80,59 +80,28 @@
           >&yen;{{ calculations.price }}</span
         >
       </div>
-      <div class="check__btn">去结算</div>
+      <router-link
+        :to="{ path: `/orderConfirmation/${shopId}` }"
+        v-show="calculations.price > 0"
+      >
+        <div class="check__btn">去结算</div>
+      </router-link>
+      <div class="check__btn" v-show="calculations.price <= 0">去结算</div>
     </div>
   </div>
 </template>
 
 <script>
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
-import { useCommonCartEffect } from './commonCartEffect'
-const useCartEffect = (shopId, showCart) => {
+import { useCommonCartEffect } from '../../effects/cartEffects'
+const useCartEffect = (showCart) => {
   const store = useStore()
-  const { changeCartItemInfo } = useCommonCartEffect()
-  const cartList = store.state.cartList
-
-  const calculations = computed(() => {
-    const productList = cartList[shopId]?.productList
-    const result = { total: 0, price: 0, allChecked: true }
-    if (productList) {
-      let count = 0
-      for (const i in productList) {
-        const product = productList[i]
-        result.total += product.count
-        if (product.check) {
-          result.price += product.count * product.price
-        } else {
-          result.allChecked = false
-        }
-        count += product.count
-      }
-      if (count === 0) {
-        result.allChecked = false
-      }
-    }
-    if (typeof productList === 'undefined') {
-      result.allChecked = false
-    } else if (Object.keys(productList).length === 0) {
-      // console.log(Object.keys(productList))
-      result.allChecked = false
-    }
-    result.price = result.price.toFixed(2)
-    return result
-  })
-
   // 计算购物车内商品数量
 
   // 计算商品总价
 
-  // 获取购物车内商品数据
-  const productList = computed(() => {
-    const productList = cartList[shopId]?.productList || []
-    return productList
-  })
   // 判断是否为全选状态
 
   // 判断单个商品是否选中
@@ -150,9 +119,6 @@ const useCartEffect = (shopId, showCart) => {
   }
   // console.log(total.value)
   return {
-    calculations,
-    productList,
-    changeCartItemInfo,
     changeCartItemChecked,
     cleanCartProducts,
     setCartItemsChecked
@@ -172,16 +138,13 @@ export default {
     const route = useRoute()
     const shopId = route.params.id
     const { showCart, handleCartShowChange } = toggleCartEffect()
-    const {
-      calculations,
-      productList,
+    const { cartList, changeCartItemInfo, productList, calculations } =
+      useCommonCartEffect(shopId)
 
-      changeCartItemInfo,
-      changeCartItemChecked,
-      cleanCartProducts,
-      setCartItemsChecked
-    } = useCartEffect(shopId, showCart)
+    const { changeCartItemChecked, cleanCartProducts, setCartItemsChecked } =
+      useCartEffect(showCart)
     return {
+      cartList,
       calculations,
       productList,
       shopId,
@@ -285,24 +248,14 @@ export default {
       position: absolute;
       right: 0;
       bottom: 0.12rem;
-      &__minus,
-      &__plus {
-        display: inline-block;
-        width: 0.2rem;
-        height: 0.2rem;
-        line-height: 0.16rem;
-        border-radius: 50%;
+      .iconfont {
         font-size: 0.2rem;
-        text-align: center;
       }
       &__minus {
-        border: 0.01rem solid $medium-fontColor;
         color: $medium-fontColor;
-        margin-right: 0.05rem;
       }
       &__plus {
-        background: $btn-bgColor;
-        color: $bgColor;
+        color: $btn-bgColor;
         margin-left: 0.05rem;
       }
     }
@@ -353,6 +306,9 @@ export default {
     text-align: center;
     color: $bgColor;
     background-color: #4fb0f9;
+  }
+  a {
+    text-decoration: none;
   }
 }
 </style>

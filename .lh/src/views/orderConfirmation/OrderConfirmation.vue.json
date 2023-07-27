@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/orderConfirmation/OrderConfirmation.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1689174127378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1689174223615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<template></template>\r\n+<template>OrderConfirmation</template>\r\n <script>\r\n export default {\r\n   name: 'OrderConfirmation'\r\n }\r\n"
+                },
+                {
+                    "date": 1689174867366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-<template>OrderConfirmation</template>\r\n+<template>\r\n+    \r\n+</template>\r\n <script>\r\n export default {\r\n   name: 'OrderConfirmation'\r\n }\r\n"
+                }
+            ],
+            "date": 1689174127378,
+            "name": "Commit-0",
+            "content": "<template>\r\n    \r\n</template>\r\n<script>\r\nexport default {\r\n    name: 'OrderConfirmation'\r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

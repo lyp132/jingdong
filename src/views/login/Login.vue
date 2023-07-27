@@ -114,7 +114,8 @@ export default {
     padding: 0 0.12rem;
     &__content {
       font-size: 0.16rem;
-      line-height: 0.48rem;
+      line-height: 0.2rem;
+      margin-top: 0.14rem;
       border: none;
       outline: none;
       background: none;

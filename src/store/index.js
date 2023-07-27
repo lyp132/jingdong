@@ -25,8 +25,11 @@ const getLocalCartList = () => {
   //   }
   // }
   // }
-  return {} || JSON.parse(localStorage.cartList)
-  // return {}
+  try {
+    return JSON.parse(localStorage.cartList) || {}
+  } catch (error) {
+    return {}
+  }
 }
 
 export default createStore({
@@ -39,12 +42,12 @@ export default createStore({
     changeCartItemInfo(state, payload) {
       const { shopId, productId, productInfo, num } = payload
       const shopInfo = state.cartList[shopId] || {
-        shopName: '', productList: {}
+        shopName: '', productList: {}, showhidden: 2, shopId: ''
       }
       let product = shopInfo.productList[productId]
       if (!product) {
         productInfo.count = 0
-        // productInfo.shownum = 0
+        productInfo.number = 0
         product = productInfo
       }
       // product.shownum += 1
@@ -52,8 +55,21 @@ export default createStore({
       if (product.count < 0) {
         product.count = 0
       }
+      // console.log(shopInfo.productList)
       if (num > 0) { product.check = true }
       shopInfo.productList[productId] = product
+      // // 删除数量为空的项
+      for (const key in shopInfo.productList) {
+        if (shopInfo.productList[key].count === 0) {
+          delete shopInfo.productList[key]
+        }
+      }
+      // 为每一项商品排序
+      const n = Object.keys(shopInfo.productList)
+      for (const key in n) {
+        shopInfo.productList[n[key]].number = Number(key)
+      }
+      shopInfo.shopId = parseInt(shopId, 10)
       state.cartList[shopId] = shopInfo
       setLocalCartList(state)
     },
@@ -65,6 +81,17 @@ export default createStore({
         productList: {}
       }
       shopInfo.shopName = shopName
+      state.cartList[shopId] = shopInfo
+      setLocalCartList(state)
+    },
+    // 设置showhidden
+    setShowHidden(state, payload) {
+      const { showhidden, shopId } = payload
+      const shopInfo = state.cartList[shopId]
+      // console.log('11', shopInfo)
+      shopInfo.showhidden = showhidden
+      // console.log('22', shopInfo)
+
       state.cartList[shopId] = shopInfo
       setLocalCartList(state)
     },
@@ -89,6 +116,12 @@ export default createStore({
           products[i].check = true
         }
       }
+      setLocalCartList(state)
+    },
+    // 支付成功后清除数据
+    clearCartData(state, payload) {
+      const { shopId } = payload
+      state.cartList[shopId].productList = {}
       setLocalCartList(state)
     }
   },

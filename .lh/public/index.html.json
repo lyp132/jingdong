@@ -1,0 +1,46 @@
+{
+    "sourceFile": "public/index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1690019231097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690128910909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <%= htmlWebpackPlugin.options.title %>\n   </title>\n   <script>\n     var width = document.documentElement.clientWidth || document.body.clientWidth\n-    var ratio = width / 375\n+    var ratio = width / 390\n     var fontSize = 100 * ratio\n     document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n   </script>\n </head>\n"
+                },
+                {
+                    "date": 1690192364290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <%= htmlWebpackPlugin.options.title %>\n   </title>\n   <script>\n     var width = document.documentElement.clientWidth || document.body.clientWidth\n-    var ratio = width / 390\n+    var ratio = width / 375\n     var fontSize = 100 * ratio\n     document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n   </script>\n </head>\n"
+                },
+                {
+                    "date": 1690192444461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   <title>\n     <%= htmlWebpackPlugin.options.title %>\n   </title>\n   <script>\n-    var width = document.documentElement.clientWidth || document.body.clientWidth\n+    var width = document.documentElement.clientWidth || document.body.console.log(width)\n     var ratio = width / 375\n     var fontSize = 100 * ratio\n     document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n   </script>\n"
+                },
+                {
+                    "date": 1690192473947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,11 @@\n   <title>\n     <%= htmlWebpackPlugin.options.title %>\n   </title>\n   <script>\n-    var width = document.documentElement.clientWidth || document.body.console.log(width)\n+    var width = document.documentElement.clientWidth || document.body.clientWidth\n+    console.log(width)\n+    \n     var ratio = width / 375\n     var fontSize = 100 * ratio\n     document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n   </script>\n"
+                },
+                {
+                    "date": 1690192505727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n   </title>\n   <script>\n     var width = document.documentElement.clientWidth || document.body.clientWidth\n     console.log(width)\n-    \n-    var ratio = width / 375\n+\n+    var ratio = width / 390\n     var fontSize = 100 * ratio\n     document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n   </script>\n </head>\n"
+                },
+                {
+                    "date": 1690192512648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,14 @@\n   <title>\n     <%= htmlWebpackPlugin.options.title %>\n   </title>\n   <script>\n-    var width = document.documentElement.clientWidth || document.body.clientWidth\n-    console.log(width)\n+    // var width = document.documentElement.clientWidth || document.body.clientWidth\n+    // console.log(width)\n \n-    var ratio = width / 390\n-    var fontSize = 100 * ratio\n-    document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n+    // var ratio = width / 390\n+    // var fontSize = 100 * ratio\n+    // document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n   </script>\n </head>\n \n <body>\n"
+                },
+                {
+                    "date": 1690192530550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,14 @@\n   <title>\n     <%= htmlWebpackPlugin.options.title %>\n   </title>\n   <script>\n-    // var width = document.documentElement.clientWidth || document.body.clientWidth\n-    // console.log(width)\n+    var width = document.documentElement.clientWidth || document.body.clientWidth\n+    console.log(width)\n \n-    // var ratio = width / 390\n-    // var fontSize = 100 * ratio\n-    // document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n+    var ratio = width / 390\n+    var fontSize = 100 * ratio\n+    document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n   </script>\n </head>\n \n <body>\n"
+                }
+            ],
+            "date": 1690019231097,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"\">\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n  <link rel=\"icon\" href=\"<%= BASE_URL %>favicon.ico\">\n  <title>\n    <%= htmlWebpackPlugin.options.title %>\n  </title>\n  <script>\n    var width = document.documentElement.clientWidth || document.body.clientWidth\n    var ratio = width / 375\n    var fontSize = 100 * ratio\n    document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'\n  </script>\n</head>\n\n<body>\n  <noscript>\n    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.\n        Please enable it to continue.</strong>\n  </noscript>\n  <div id=\"app\"></div>\n  <!-- built files will be auto injected -->\n</body>\n\n</html>"
+        }
+    ]
+}

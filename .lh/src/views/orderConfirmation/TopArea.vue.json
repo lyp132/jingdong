@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/orderConfirmation/TopArea.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1689693477452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1689693511602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,26 @@\n-<template></template>\r\n+<template>\r\n+    <div class=\"top\">\r\n+      <div class=\"top__header\">\r\n+        <div class=\"iconfont top__header__back\" @click=\"handleBackClick\">\r\n+          &#xe601;\r\n+        </div>\r\n+        确认订单\r\n+      </div>\r\n+      <!-- 收货地址 -->\r\n+      <div class=\"top__receiver\">\r\n+        <div class=\"top__receiver__title\">收货地址</div>\r\n+        <div class=\"top__receiver__address\">\r\n+          北京理工大学国防科技园2号楼10层\r\n+        </div>\r\n+        <div class=\"top__receiver__info\">\r\n+          <span class=\"top__receiver__info__name\">瑶妹（先生）</span\r\n+          ><span class=\"top__receiver__info__phone\">18911024266</span>\r\n+        </div>\r\n+        <div class=\"iconfont top__receiver__icon\">&#xe601;</div>\r\n+      </div>\r\n+    </div>\r\n+</template>\r\n <script>\r\n export default {\r\n   name: 'TopArea'\r\n }\r\n"
+                },
+                {
+                    "date": 1689693526537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,58 @@\n   name: 'TopArea'\r\n }\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n+.top {\r\n+  position: relative;\r\n+  height: 1.58rem;\r\n+  background-image: linear-gradient(0deg, rgba(0, 145, 255, 0) 4%, #0091ff 50%);\r\n+  &__header {\r\n+    position: relative;\r\n+    padding: 0.22rem;\r\n+    padding-left: 0.18rem;\r\n+    text-align: center;\r\n+    font-size: 0.16rem;\r\n+    color: #fff;\r\n+    line-height: 0.22rem;\r\n+    &__back {\r\n+      position: absolute;\r\n+      font-size: 0.22rem;\r\n+    }\r\n+  }\r\n+  &__receiver {\r\n+    position: absolute;\r\n+    left: 0.18rem;\r\n+    right: 0.18rem;\r\n+    background-color: #fff;\r\n+    border-radius: 4px;\r\n+    color: #333;\r\n+    &__title {\r\n+      font-size: 0.16rem;\r\n+      line-height: 0.22rem;\r\n+      padding: 0.16rem 0 0.14rem 0.16rem;\r\n+    }\r\n+    &__address {\r\n+      font-size: 0.14rem;\r\n+      line-height: 0.2rem;\r\n+      padding-left: 0.16rem;\r\n+    }\r\n+    &__info {\r\n+      font-size: 0.12rem;\r\n+      line-height: 0.17rem;\r\n+      color: #666;\r\n+      padding: 0.06rem 0 0.16rem 0.16rem;\r\n+      &__name {\r\n+        padding-right: 0.06rem;\r\n+      }\r\n+    }\r\n+    &__icon {\r\n+      position: absolute;\r\n+      top: 0.5rem;\r\n+      right: 0.16rem;\r\n+      color: #666;\r\n+      font-size: 0.2rem;\r\n+      transform: rotate(180deg);\r\n+    }\r\n+  }\r\n+}\r\n </style>\r\n"
+                }
+            ],
+            "date": 1689693477452,
+            "name": "Commit-0",
+            "content": "<template>\r\n    \r\n</template>\r\n<script>\r\nexport default {\r\n    name: 'TopArea'\r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n\r\n</style>\r\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/views/orderList/OrderList.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1689757310396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1689766576233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,17 @@\n-<template>orderList</template>\r\n+<template>\r\n+<div class=\"wrapper\">\r\n+  orderList\r\n+</div>\r\n+<Docker :currentIndex=\"2\"/>\r\n+\r\n+</template>\r\n <script>\r\n+import Docker from '@/components/Docker.vue'\r\n+\r\n export default {\r\n-  name: 'OrderList'\r\n+  name: 'OrderList',\r\n+  components: { Docker }\r\n }\r\n </script>\r\n <style lang=\"scss\" scoped>\r\n </style>\r\n"
+                },
+                {
+                    "date": 1690025928031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n     }\r\n   }\r\n   getNearbyList()\r\n   const { list } = toRefs(data)\r\n-  console.log(list)\r\n+  // console.log(list)\r\n   return { list }\r\n }\r\n export default {\r\n   name: 'OrderList',\r\n"
+                }
+            ],
+            "date": 1689757310395,
+            "name": "Commit-0",
+            "content": "<template>orderList</template>\r\n<script>\r\nexport default {\r\n  name: 'OrderList'\r\n}\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n</style>\r\n"
+        }
+    ]
+}

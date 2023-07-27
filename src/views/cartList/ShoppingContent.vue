@@ -1,83 +1,100 @@
 <template>
   <div class="border">
-    <div
-      class="border__content"
-      v-for="(item, index) in result"
-      :key="item.shopName"
-    >
-      <!-- 商店标题 -->
-      <div class="border__title">{{ item.shopName }}</div>
-      <!-- 商店内容 -->
-      <template v-for="content in item.productList" :key="content._id">
-        <div class="border__content__info">
-          <img
-            class="border__content__info__img"
-            :src="content.imgUrl"
-            alt=""
-          />
-          <div class="border__content__info__detail">
-            <div class="border__content__info__detail__name">
-              {{ content.name }}
-            </div>
-            <div class="border__content__info__detail__price">
-              &yen; {{ content.price }} x {{ content.count }}
-            </div>
-            <div class="border__content__info__detail__total">
-              &yen; {{ content.price * content.count }}
+    <template v-for="item in notEmptyCartList" :key="item.shopName">
+      <div
+        class="border__content"
+        v-if="Object.keys(item.productList).length > 0"
+      >
+        <!-- 商店标题 -->
+        <div class="border__title">{{ item.shopName }}</div>
+        <!-- 商店内容 -->
+        <template v-for="content in item.productList" :key="content._id">
+          <div
+            class="border__content__info"
+            v-show="content.number < item.showhidden"
+          >
+            <img
+              class="border__content__info__img"
+              :src="content.imgUrl"
+              alt=""
+            />
+            <div class="border__content__info__detail">
+              <div class="border__content__info__detail__name">
+                {{ content.name }}
+              </div>
+              <div class="border__content__info__detail__price">
+                &yen; {{ content.price }} x {{ content.count }}
+              </div>
+              <div class="border__content__info__detail__total">
+                &yen; {{ content.price * content.count }}
+              </div>
             </div>
           </div>
-        </div>
-      </template>
-      <!-- 折叠 -->
-      <div class="border__content__fold" v-if="true">
-        <div>
-          共计几件/几 kg
-          <span
-            class="iconfont"
-            @click="
-              () => {
-                showAllItem(index)
-              }
-            "
-            >&#xe65e;</span
-          >
+        </template>
+        <!-- 折叠 -->
+        <div
+          class="border__content__fold"
+          v-if="Object.keys(item.productList).length > item.showhidden"
+        >
+          <div>
+            共计几件/几 kg
+            <span
+              class="iconfont"
+              @click="
+                () => {
+                  showAllItem(item)
+                }
+              "
+              >&#xe65e;</span
+            >
+          </div>
         </div>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 <script>
-import { reactive } from 'vue'
 import { useStore } from 'vuex'
 
 const useCartListEffect = () => {
   const store = useStore()
-  // const show = ref(false)
   // 获取购物车内容
   const cartList = store.state.cartList
-  const result = reactive({})
-  for (const i in cartList) {
-    result[i] = cartList[i]
-    // console.log(Object.keys(cartList[i].productList))
-    // result[i].show = false
-    if (Object.keys(result[i].productList).length > 2) {
-      // result[i].show = true
-    }
+  const notEmptyCartList = {}
+
+  const setShowHidden = (showhidden, shopId) => {
+    store.commit('setShowHidden', { showhidden, shopId })
   }
-  const showAllItem = (index) => {
-    // const cartList = store.state.cartList
-    // result[index] = cartList[index]
-    // result[index].show = false
-    // console.log('222', store.state.cartList)
+  // // 为每一项商品排序
+  // const n = Object.keys(cartList)
+  // for (const key in n) {
+  //   // shopInfo.productList[n[key]].number = Number(key)
+  //   notEmptyCartList[n[key]] = cartList[n[key]]
+  //   setShowHidden(2, n[key])
+  // }
+  // console.log('notEmptyCartList', notEmptyCartList)
+
+  // 为每一项商品排序
+  for (const key in cartList) {
+    // shopInfo.productList[n[key]].number = Number(key)
+    notEmptyCartList[key] = cartList[key]
+    setShowHidden(2, key)
   }
-  // console.log(cartList)
-  return { result, showAllItem }
+
+  const showAllItem = (item) => {
+    item.showhidden = Object.keys(item.productList).length
+    setShowHidden(Object.keys(item.productList).length, item.shopId)
+  }
+  console.log(notEmptyCartList)
+
+  return { notEmptyCartList, showAllItem }
 }
+
 export default {
   name: 'ShoppingContent',
   setup() {
-    const { result, showAllItem } = useCartListEffect()
-    return { result, showAllItem }
+    const { notEmptyCartList, showAllItem } = useCartListEffect()
+    return { notEmptyCartList, showAllItem }
   }
 }
 </script>

@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "32096268",
+      "name": "用户编辑",
+      "font_class": "yonghubianji",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
+      "icon_id": "507751",
+      "name": "群蜂客服经理",
+      "font_class": "qunfengkefujingli",
+      "unicode": "e789",
+      "unicode_decimal": 59273
+    },
+    {
+      "icon_id": "725735",
+      "name": "钱 ",
+      "font_class": "qian",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "1418228",
+      "name": "收货地址",
+      "font_class": "shouhuodizhi",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "17812670",
+      "name": "icon_客服",
+      "font_class": "icon_kefu",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "12868744",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "1269",
+      "name": "加",
+      "font_class": "jia",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "577312",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "e726",
+      "unicode_decimal": 59174
+    },
+    {
+      "icon_id": "3101157",
+      "name": "对号",
+      "font_class": "duihao",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "11372671",
+      "name": "减少",
+      "font_class": "jianshao",
+      "unicode": "e8b1",
+      "unicode_decimal": 59569
+    },
+    {
       "icon_id": "630092",
       "name": "向下箭头",
       "font_class": "xiangxiajiantou",
